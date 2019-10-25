@@ -122,3 +122,10 @@ fabric.properties
 
 # Build dir
 build/
+
+# div \idea files
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/rubato-booking-frontend.iml
+.idea/vcs.xml
