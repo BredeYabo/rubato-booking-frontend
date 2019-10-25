@@ -1,24 +1,19 @@
 import {
-    INCREMENT,
-    DECREMENT,
     FETCH_BEGIN,
     FETCH_SUCCESS,
     FETCH_FAILURE
-} from '../actions/index';
+} from '../actions/fetchActions';
 
 const initialState = {
-    count: 0,
     items: [],
     loading: false,
     error: null
 };
 
 
-
-
 /*
-    This is an example on how fetch-requests can be handled in redux.
-    This could be modified into handling fetching all or some artists in the artistList etc.
+    This is an example on how fetch-requests can be handled from an API in redux.
+    This could be modified into handling fetching all or some artists from the backend.
 */
 export function fetchReducer(state = initialState, action) {
     switch(action.type) {
