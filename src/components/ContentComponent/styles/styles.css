@@ -1,0 +1,31 @@
+.contentContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    background-color: #e3e3e3;
+    justify-items: center;
+    justify-content: center;
+
+}
+
+.artistGrid{
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    width: 84vw;
+    gap: 2vw;
+    grid-template-columns: repeat(auto-fill, 19vw);
+}
+
+@media only screen and (max-width: 780px) {
+    .artistGrid{
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        display: grid;
+        width: 84vw;
+        gap: 2vw;
+        grid-template-columns: repeat(auto-fill, 40vw);
+    }
+}

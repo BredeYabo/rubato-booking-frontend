@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import ExampleComponent from "./components/ExampleComponent";
+import ContentComponent from "./components/ContentComponent";
+import HeaderComponent from "./components/HeaderComponent";
 
 class App extends React.Component {
 
   render() {
     return(
-        <div>
-            <h1>rubato.</h1>
-            <ExampleComponent/>
+        <div className={'mainContainer'}>
+            <HeaderComponent/>
+            <ContentComponent/>
         </div>
     )
   }
