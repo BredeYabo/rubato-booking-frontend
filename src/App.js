@@ -1,14 +1,19 @@
 import React from 'react';
 import './App.css';
 import ExampleComponent from "./components/ExampleComponent";
+import Header from "./components/Header";
+import ArtistList from "./components/ArtistList";
+import Footer from "./components/Footer"
 
 class App extends React.Component {
 
   render() {
     return(
         <div>
-            <h1>rubato.</h1>
-            <ExampleComponent/>
+           <Header />
+           <ArtistList />
+           <Footer />
+           <ExampleComponent/>
         </div>
     )
   }
