@@ -4,19 +4,47 @@
     src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
 }
 
-.headerContainer{
+.headerContainer {
     display: flex;
     height: 100px;
     width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.headerText{
-    font-family: 'Futura';
-    color: #000000;
-    font-size: 70px;
-    font-style: italic;
-    margin-left: 60px;
 
+#header_logo {
+    justify-content: left;
+    width: 17%;
+    height: auto;
+    margin-left: 40px;
 }
+
+#menu_list {
+    margin-right: 40px;
+    list-style: none;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#menu_item > a {
+    display: inline-flex;
+    color: grey;
+    text-decoration: none;
+    margin: 10px;
+}
+
+#menu_item > a:hover  {
+    color: black;
+}
+
+.sm_icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+
 
 
