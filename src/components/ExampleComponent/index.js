@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/styles.css'
+import './styles.css'
 import { connect } from 'react-redux';
 import {increment,decrement} from "../../redux/actions/countActions";
 
