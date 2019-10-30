@@ -11,7 +11,6 @@ export default class HeaderComponent extends Component{
                 <img src="rubato_logo.png"  alt="Rubato logo" id="header_logo"/>
                 <ul id="menu_list">
                     {/* Nav buttons */}
-                    <li id="menu_item"><a href="#">Hjem</a></li>
                     <li id="menu_item"><a href="#">Kontakt</a></li>
                     <li id="menu_item"><a href="#">Om</a></li>
 
