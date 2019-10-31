@@ -15,8 +15,8 @@
 
 #header_logo {
     justify-content: left;
-    width: 17%;
-    height: auto;
+    width: 60%;
+    height: inherit;
     margin-left: 40px;
 }
 

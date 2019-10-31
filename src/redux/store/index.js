@@ -5,5 +5,6 @@ import { createStore, applyMiddleware } from 'redux';
 // thunk enables redux to handle API requests
 export const store = createStore(
     rootReducer,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk),
+
 );
