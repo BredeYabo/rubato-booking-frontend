@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-form {
+#form {
     margin: 10px 0px;
     width: 400px;
     display: flex;
@@ -27,7 +27,7 @@ input:focus {
     outline: 0;
 }
 
-button {
+#login_submit {
     padding: 10px;
     width: 25%;
     background-color: steelblue;

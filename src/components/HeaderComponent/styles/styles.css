@@ -28,21 +28,34 @@
     align-items: center;
 }
 
-#menu_item > a {
-    display: inline-flex;
-    color: grey;
-    text-decoration: none;
-    margin: 10px;
+.nav_button {
+    background-color: #e3e3e3;
+    border: none;
+    box-shadow: none;
+    margin: 10px 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    outline: none;
+    transition: background-color 0.5s
 }
 
-#menu_item > a:hover  {
-    color: black;
+.nav_button:hover {
+    background-color: black;
+    color: white;
+}
+
+.nav_button:active {
+    border-bottom: black;
 }
 
 .sm_icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
 }
+
+
 
 
 

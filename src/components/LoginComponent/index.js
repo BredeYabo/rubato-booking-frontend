@@ -1,5 +1,5 @@
 import React from "react";
-import {login, logout} from "../../redux/actions/userActions";
+import {login} from "../../redux/actions/userActions";
 import {connect} from "react-redux";
 import "./styles/index.css"
 
@@ -7,31 +7,29 @@ class LoginComponent extends React.Component {
     login = () => {
         const username = document.getElementById("username").value;
         if (username > " ") {
-            this.props.login(username)
+            this.props.login(username);
             this.props.history.push("/")
         } else {
+            // Error message to user here.
             alert("Need to have a name bruh")
         }
 
     };
 
-    logout = () => {
-        this.props.logout()
-    };
 
     render() {
         return (
             <div id="loginContainer">
-                <form action="#">
+                <div id="form">
 
                     <input type="text" id="username" placeholder="Username" autoComplete="off"/>
                     <br/>
 
                     <input type="password" id="password" placeholder="Password" autoComplete="off"/>
 
-                    <button onClick={this.login}>Log in</button>
+                    <button id="login_submit" onClick={this.login}>Log in</button>
 
-                </form>
+                </div>
             </div>
         )
     }
@@ -45,11 +43,6 @@ function mapStateToProps(state) {
     };
 }
 
-// maps the increment/decrement actions to the increment/decrement actions in the component
-const mapDispatchToProps = {
-    login,
-    logout
-};
 
 // connects these redux functions to the component
-export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
+export default connect(mapStateToProps, { login })(LoginComponent);

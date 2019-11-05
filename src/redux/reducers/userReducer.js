@@ -3,7 +3,6 @@ import { LOGIN, LOGOUT } from "../actions/userActions.js"
 export function userReducer (state = { }, action) {
     switch (action.type) {
         case LOGIN:
-            console.log(action.payload);
             const { username } = action.payload;
             return {
                 ...state,
@@ -12,8 +11,9 @@ export function userReducer (state = { }, action) {
 
         case LOGOUT:
             return {
-                ...state
-            }
+                ...state,
+                username: null
+            };
         default:
             return state;
     }
