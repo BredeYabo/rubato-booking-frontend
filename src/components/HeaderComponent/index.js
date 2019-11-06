@@ -17,11 +17,11 @@ class HeaderComponent extends Component{
                     {/* Nav buttons */}
                     { this.props.username ?
                         <Link to="/">
-                            <button className="nav_button" id="button_logout menu_item" onClick={() => this.props.logout()}>Logout</button>
+                            <button className="nav_button" id="button_logout" onClick={() => this.props.logout()}>Logout</button>
                         </Link>
                         :
                         <Link to="/login">
-                            <button className="nav_button" id="button_login menu_item">Login</button>
+                            <button className="nav_button" id="button_login">Login</button>
                         </Link>
 
                     }

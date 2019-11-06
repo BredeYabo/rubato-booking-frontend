@@ -28,6 +28,27 @@
     align-items: center;
 }
 
+#button_logout {
+    background-color: #e3e3e3;
+    transition: background-color 0.5s;
+}
+
+#button_logout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#button_login, #login_submit {
+    background-color: #e3e3e3;
+    transition: background-color 0.3s;
+}
+
+#button_login:hover, #login_submit:hover {
+    background-color: steelblue;
+    color: #fff;
+}
+
+
 .nav_button {
     background-color: #e3e3e3;
     border: none;
@@ -41,13 +62,13 @@
 }
 
 .nav_button:hover {
-    background-color: black;
-    color: white;
+    background-color: #c2c2c2;
 }
 
 .nav_button:active {
     border-bottom: black;
 }
+
 
 .sm_icon {
     width: 30px;

@@ -27,7 +27,7 @@ class LoginComponent extends React.Component {
 
                     <input type="password" id="password" placeholder="Password" autoComplete="off"/>
 
-                    <button id="login_submit" onClick={this.login}>Log in</button>
+                    <button id="login_submit" className={"nav_button"} onClick={this.login}>Log in</button>
 
                 </div>
             </div>
