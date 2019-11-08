@@ -1,25 +1,54 @@
 import React,{Component} from 'react';
 import './styles/styles.css';
 import '../../res/fonts/futura.ttf'
+import { Link } from "react-router-dom";
+import {login, logout} from "../../redux/actions/userActions";
+import {connect} from "react-redux";
+
 
 // import ExampleComponent from "./components/ExampleComponent";
+class HeaderComponent extends Component{
 
-export default class HeaderComponent extends Component{
     render() {
         return(
-            <div className='headerContainer' id="header">
-                <img src="rubato_logo.png"  alt="Rubato logo" id="header_logo"/>
-                <ul id="menu_list">
+            <nav className='headerContainer' id="header">
+                <Link to="/"><img src="rubato_logo.png"  alt="Rubato logo" id="header_logo"/></Link>
+                <div id="menu_list">
                     {/* Nav buttons */}
-                    <li id="menu_item"><a href="#">Kontakt</a></li>
-                    <li id="menu_item"><a href="#">Om</a></li>
+                    { this.props.username ?
+                        <Link to="/">
+                            <button className="nav_button" id="button_logout" onClick={() => this.props.logout()}>Logout</button>
+                        </Link>
+                        :
+                        <Link to="/login">
+                            <button className="nav_button" id="button_login">Login</button>
+                        </Link>
 
-                    {/* SoMe Buttons */}
-                    <li id="menu_item"><a href="https://www.youtube.com/channel/UCzcOitxRRjSq7Lmd3_P8j1g"><img src="sm_icons/yt_icon.svg" className="sm_icon" alt="YT"/></a></li>
-                    <li id="menu_item"><a href="https://www.instagram.com/rubato.no/"><img src="sm_icons/ig_icon.svg" className="sm_icon" alt="IG"/></a></li>
-                    <li id="menu_item"><a href="https://www.facebook.com/rubato.no/"><img src="sm_icons/fb_icon.svg" className="sm_icon" alt="FB"/></a></li>
-                </ul>
-            </div>
+                    }
+
+                    <Link to="/">
+                        <button className="nav_button">Kontakt</button>
+                    </Link>
+
+                    <Link to="/">
+                        <button className="nav_button">Om</button>
+                    </Link>
+
+                </div>
+            </nav>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        username: state.user.username
+    };
+}
+
+const mapDispatchToProps = {
+    login,
+    logout
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent)

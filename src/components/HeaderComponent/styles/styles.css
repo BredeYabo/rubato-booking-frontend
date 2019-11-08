@@ -15,8 +15,8 @@
 
 #header_logo {
     justify-content: left;
-    width: 17%;
-    height: auto;
+    width: 60%;
+    height: inherit;
     margin-left: 40px;
 }
 
@@ -28,23 +28,51 @@
     align-items: center;
 }
 
-#menu_item > a {
-    display: inline-flex;
-    color: grey;
-    text-decoration: none;
-    margin: 10px;
+
+#button_logout {
+    background-color: #e3e3e3;
+    transition: background-color 0.5s;
 }
 
-#menu_item > a:hover  {
-    color: black;
+#button_logout:hover {
+    background-color: darkred;
+    color: white;
 }
+
+#button_login, #login_submit {
+    background-color: #e3e3e3;
+    transition: background-color 0.3s;
+}
+
+#button_login:hover, #login_submit:hover {
+    background-color: steelblue;
+    color: #fff;
+}
+
+
+.nav_button {
+    background-color: #e3e3e3;
+    border: none;
+    box-shadow: none;
+    margin: 10px 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    outline: none;
+    transition: background-color 0.5s
+}
+
+.nav_button:hover {
+    background-color: #c2c2c2;
+}
+
+.nav_button:active {
+    border-bottom: black;
+}
+
 
 .sm_icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
 }
-
-
-
-
-

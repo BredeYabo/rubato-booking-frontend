@@ -2,7 +2,6 @@
 import {DECREMENT, INCREMENT} from "../actions/countActions";
 
 export function countReducer(state = {count:0}, action) {
-    console.log('countReducer:', state, action);
 
     switch(action.type) {
         case INCREMENT:
