@@ -34,10 +34,6 @@ class HeaderComponent extends Component{
                         <button className="nav_button">Om</button>
                     </Link>
 
-                    {/* SoMe Buttons */}
-                    <li id="menu_item"><a href="https://www.youtube.com/channel/UCzcOitxRRjSq7Lmd3_P8j1g"><img src="sm_icons/yt_icon.svg" className="sm_icon" alt="YT"/></a></li>
-                    <li id="menu_item"><a href="https://www.instagram.com/rubato.no/"><img src="sm_icons/ig_icon.svg" className="sm_icon" alt="IG"/></a></li>
-                    <li id="menu_item"><a href="https://www.facebook.com/rubato.no/"><img src="sm_icons/fb_icon.svg" className="sm_icon" alt="FB"/></a></li>
                 </div>
             </nav>
         )

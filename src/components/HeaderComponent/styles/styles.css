@@ -28,6 +28,7 @@
     align-items: center;
 }
 
+
 #button_logout {
     background-color: #e3e3e3;
     transition: background-color 0.5s;
@@ -75,10 +76,3 @@
     height: 30px;
     margin-left: 10px;
 }
-
-
-
-
-
-
-
