@@ -4,20 +4,26 @@
     src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
 }
 
+:focus {
+    outline: none !important;
+}
+
 .headerContainer {
     display: flex;
     height: 100px;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 
 #header_logo {
     justify-content: left;
-    width: 60%;
-    height: inherit;
+    width: auto;
+    height: 100px;
     margin-left: 40px;
+    margin-right: 10px;
 }
 
 #menu_list {
@@ -28,9 +34,7 @@
     align-items: center;
 }
 
-
 #button_logout {
-    background-color: #e3e3e3;
     transition: background-color 0.5s;
 }
 
@@ -40,7 +44,7 @@
 }
 
 #button_login, #login_submit {
-    background-color: #e3e3e3;
+
     transition: background-color 0.3s;
 }
 
@@ -49,30 +53,108 @@
     color: #fff;
 }
 
-
 .nav_button {
-    background-color: #e3e3e3;
     border: none;
     box-shadow: none;
     margin: 10px 5px;
     padding: 10px;
     font-size: 20px;
-    font-family: Arial, sans-serif;
+    font-family: Futura,Arial, sans-serif;
     outline: none;
-    transition: background-color 0.5s
+    transition: background-color 0.2s;
+    color: #737373;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .nav_button:hover {
-    background-color: #c2c2c2;
+    color: #000;
 }
-
-.nav_button:active {
-    border-bottom: black;
-}
-
 
 .sm_icon {
     width: 30px;
     height: 30px;
-    margin-left: 10px;
+    margin-left: 8px;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    right: 8vw;
+    top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: #000000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+    min-width: 50px;
+    min-height: 50px;
+    margin-top: -27px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    height: auto;
+    width: 100%;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+    position: fixed;
+    height: auto;
+}
+/* General sidebar styles */
+.bm-menu {
+    margin-top: -40px;
+    background: #ffffff;
+    opacity: 1;
+    border-style: solid;
+    border-color: #737373;
+    margin-right: -30px;
+    padding-left: 0;
+    border-width: 5px;
+}
+
+
+@media only screen and (max-width: 780px) {
+    #header_logo{
+        height: 13vw;
+    }
+    .nav_button{
+        padding-left: 0;
+        margin-left: 10px;
+        font-size: 10vw;
+        width: 100%;
+        text-align: left;
+        border-style: solid;
+        border-color: #737373;
+        border-width: 0px 0px 5px 0px;
+    }
+    .nav_button:hover {
+        color: #000;
+    }
+
+    .nav_button:active {
+        border-bottom: none;
+    }
+    #button_login, #login_submit {
+        background-color: transparent;
+        transition: background-color 0.3s;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #header_logo{
+        height: 11vw;
+        transition: 0.1s;
+    }
+
 }
