@@ -1,0 +1,4 @@
+module.exports = {
+    USER: "noreply@ruabto.no",
+    PASS: "noreply123"
+};
