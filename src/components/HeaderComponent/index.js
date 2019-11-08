@@ -23,17 +23,15 @@ class HeaderComponent extends Component{
                         <Link to="/login">
                             <button className="nav_button" id="button_login">Login</button>
                         </Link>
-
                     }
 
                     <Link to="/kontakt">
                         <button className="nav_button">Kontakt</button>
                     </Link>
 
-                    <Link to="/">
+                    <Link to="/om">
                         <button className="nav_button">Om</button>
                     </Link>
-
                 </div>
             </nav>
         )
