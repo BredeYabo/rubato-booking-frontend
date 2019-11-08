@@ -1,5 +1,5 @@
 import React from "react";
-import {login} from "../../redux/actions/userActions";
+import {login} from "../../redux/actions/userActions.js";
 import {connect} from "react-redux";
 import "./styles/index.css"
 
