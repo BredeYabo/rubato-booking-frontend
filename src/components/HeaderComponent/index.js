@@ -56,6 +56,7 @@ class HeaderComponent extends Component{
                             <button className="nav_button">Kontakt</button>
                         </Link>
 
+
                         <Link to="/">
                             <button className="nav_button">Om</button>
                         </Link>
