@@ -15,15 +15,16 @@
     justify-content: center;
 }
 
-input {
-    font-size: 35px;
+#contact-message {
+    font-size: 16px;
     background-color: inherit;
     box-shadow: none;
     border: none;
     border-bottom: 2px solid black;
 }
 
-input:focus {
+#contact-message:focus {
     outline: 0;
 }
+
 

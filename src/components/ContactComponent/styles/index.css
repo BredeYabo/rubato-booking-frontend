@@ -1,0 +1,28 @@
+#contact-component {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+#contact-image {
+    justify-content: left;
+}
+
+#contact-form {
+    display: flex;
+    justify-content: ;
+    flex-direction: column;
+
+}
+
+.standard-input {
+    font-size: 35px;
+    background-color: inherit;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.standard-input:focus {
+    outline: 0;
+}

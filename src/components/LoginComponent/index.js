@@ -22,10 +22,10 @@ class LoginComponent extends React.Component {
             <div id="loginContainer">
                 <div id="form">
 
-                    <input type="text" id="username" placeholder="Username" autoComplete="off"/>
+                    <input type="text" className="standard-input" id="username" placeholder="Username" autoComplete="off"/>
                     <br/>
 
-                    <input type="password" id="password" placeholder="Password" autoComplete="off"/>
+                    <input type="password" className="standard-input" id="password" placeholder="Password" autoComplete="off"/>
 
                     <button id="login_submit" className={"nav_button"} onClick={this.login}>Log in</button>
 

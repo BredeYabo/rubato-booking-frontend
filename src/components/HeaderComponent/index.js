@@ -26,7 +26,7 @@ class HeaderComponent extends Component{
 
                     }
 
-                    <Link to="/">
+                    <Link to="/kontakt">
                         <button className="nav_button">Kontakt</button>
                     </Link>
 
