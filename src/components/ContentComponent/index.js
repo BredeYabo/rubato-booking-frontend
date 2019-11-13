@@ -18,17 +18,7 @@ export default class ContentComponent extends Component{
                     <ArtistPreviewComponent/>
                     <ArtistPreviewComponent/>
                     <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
+
 
 
                 </div>
