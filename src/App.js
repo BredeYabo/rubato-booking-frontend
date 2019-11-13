@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ContentComponent from "./components/ContentComponent";
 import HeaderComponent from "./components/HeaderComponent";
-
+import ArtistPage from "./components/ArtistPage";
 
 class App extends React.Component {
 
@@ -10,7 +10,7 @@ class App extends React.Component {
     return(
         <div className={'mainContainer'}>
             <HeaderComponent/>
-            <ContentComponent/>
+            <ArtistPage/>
         </div>
     )
   }
