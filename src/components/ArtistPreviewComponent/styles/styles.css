@@ -1,8 +1,4 @@
-@font-face {
-    font-family: 'Futura-font';
-    font-style: italic;
-    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
-}
+
 .artistPreviewContainer{
     display: flex;
     flex-direction: column;
@@ -29,26 +25,24 @@
     position: absolute;
     bottom: 20px;
     left: 30px;
-    color: #FFFFFF;
+    color: #fff;
     z-index: 15;
     font-size: 1em;
 }
 
 .shadowGradient{
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
 }
 
-img {
+.artistImage{
     max-height: 100%;
     max-width: 100%;
     height: 19vw;
     width: 19vw;
-}
-
-.artistImage{
     margin-top: -19vw;
     z-index: 5;
+    object-fit: cover;
 }
 .artistName{
     font-weight: bold;
@@ -61,7 +55,7 @@ img {
         height: 40vw;
         width: 40vw;
     }
-    img{
+    .artistImage{
         height: 40vw;
         width: 40vw;
     }

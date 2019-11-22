@@ -11,3 +11,19 @@
 .contentContainer{
   grid-area: contentContainer;
 }
+
+/*
+  DEFAULT COLORS
+
+
+  example in use:
+
+  .className{
+  color: var(--dark-gray)
+  }
+*/
+:root{
+  --dark-gray:#737373;
+  --login-blue:#3690ff;
+  --logout-red: #ff4136;
+}

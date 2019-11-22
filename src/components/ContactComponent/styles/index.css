@@ -10,9 +10,7 @@
 
 #contact-form {
     display: flex;
-    justify-content: ;
     flex-direction: column;
-
 }
 
 .standard-input {

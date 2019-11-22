@@ -2,25 +2,17 @@ import React,{Component} from 'react';
 import './styles/styles.css';
 import ArtistPreviewComponent from "../ArtistPreviewComponent";
 
-// import ExampleComponent from "./components/ExampleComponent";
-
 export default class ContentComponent extends Component{
     render() {
         return(
             <div className={'contentContainer'} >
                 <div className={'artistGrid'}>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-                    <ArtistPreviewComponent/>
-
-
-
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Lars Kåre Syversen og Kompaniet"} artistInfo={"løvblåser"}/>
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
                 </div>
             </div>
         )

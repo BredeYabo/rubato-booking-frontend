@@ -4,32 +4,53 @@ import {connect} from "react-redux";
 import "./styles/index.css"
 
 class LoginComponent extends React.Component {
-    login = () => {
-        const username = document.getElementById("username").value;
-        if (username > " ") {
-            this.props.login(username);
-            this.props.history.push("/")
-        } else {
-            // Error message to user here.
-            alert("Need to have a name bruh")
-        }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            username:'',
+            password:''
+        }
+    }
+
+    login = () => {
+        const username = this.state.username;
+        // TODO: handle password
+        //const password = this.state.password;
+        this.props.login(username);
+        this.props.history.push("/")
     };
 
+    handleInputChange =(event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({[name]: value})
+    };
 
     render() {
         return (
-            <div id="loginContainer">
-                <div id="form">
-
-                    <input type="text" className="standard-input" id="username" placeholder="Username" autoComplete="off"/>
-                    <br/>
-
-                    <input type="password" className="standard-input" id="password" placeholder="Password" autoComplete="off"/>
-
-                    <button id="login_submit" className={"nav_button"} onClick={this.login}>Log in</button>
-
-                </div>
+            <div className="loginContainer">
+                <form className="form" onSubmit={this.login}>
+                    <input
+                        name="username"
+                        type="email"
+                        className="standard-input username"
+                        placeholder="email"
+                        autoComplete="off"
+                        onChange={this.handleInputChange}
+                        required />
+                    <input
+                        name="password"
+                        type="password"
+                        className="standard-input "
+                        placeholder="passord"
+                        autoComplete="off"
+                        onChange={this.handleInputChange}
+                        minLength={8}
+                        maxLength={16}
+                        required />
+                    <input type="submit" className={"nav_button login_submit"} value={"logg inn"}/>
+                </form>
             </div>
         )
     }

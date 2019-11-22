@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './styles/styles.css';
 import '../../res/fonts/futura.ttf';
+import rubato_logo from '../../res/images/rubato_logo.png'
 import crossIcon from '../../res/icons/cross.svg';
 import { Link } from "react-router-dom";
 import {login, logout} from "../../redux/actions/userActions";
@@ -8,13 +9,14 @@ import {connect} from "react-redux";
 import {slide as BurgerMenu} from 'react-burger-menu';
 import windowSize from 'react-window-size';
 
-
 // import ExampleComponent from "./components/ExampleComponent";
 class HeaderComponent extends Component{
     render() {
         return(
-            <nav className='headerContainer' id="header">
-                <Link to="/"><img src="rubato_logo.png"  alt="Rubato logo" id="header_logo"/></Link>
+            <nav className='headerContainer'>
+                <Link to="/">
+                    <img src={rubato_logo} alt="Rubato logo" className="header_logo"/>
+                </Link>
                 {this.props.windowWidth < 780 ?
                     <BurgerMenu
                         right
@@ -23,43 +25,23 @@ class HeaderComponent extends Component{
                         customCrossIcon={ <img src={crossIcon} alt={'X'}/> }
                     >
                         { this.props.username ?
-                            <Link to="/">
-                                <button className="nav_button" id="button_logout" onClick={() => this.props.logout()}>Logout</button>
-                            </Link>
+                            <Link to="/" className="nav_button is-logged-in" onClick={() => this.props.logout()} >logg ut</Link>
                             :
-                            <Link to="/login">
-                                <button className="nav_button" id="button_login">Login</button>
-                            </Link>
+                            <Link to="/login" className="nav_button is-not-logged-in">logg inn</Link>
                         }
-
-                        <Link to="/">
-                            <button className="nav_button">Kontakt</button>
-                        </Link>
-
-                        <Link to="/">
-                            <button className="nav_button">Om</button>
-                        </Link>
+                        <Link to="/" className={'nav_button'}>kontakt</Link>
+                        <Link to="/" className="nav_button">om</Link>
                     </BurgerMenu>
                     :
-                    <div id="menu_list">
+                    <div className="menu_list">
                         {/* Nav buttons */}
                         { this.props.username ?
-                            <Link to="/">
-                                <button className="nav_button" id="button_logout" onClick={() => this.props.logout()}>Logout</button>
-                            </Link>
+                            <Link to="/" className="nav_button is-logged-in" onClick={() => this.props.logout()} >logg ut</Link>
                             :
-                            <Link to="/login">
-                                <button className="nav_button" id="button_login">Login</button>
-                            </Link>
+                            <Link to="/login" className="nav_button is-not-logged-in">logg inn</Link>
                         }
-                        <Link to="/">
-                            <button className="nav_button">Kontakt</button>
-                        </Link>
-
-
-                        <Link to="/">
-                            <button className="nav_button">Om</button>
-                        </Link>
+                        <Link to="/" className={'nav_button'}>kontakt</Link>
+                        <Link to="/" className="nav_button">om</Link>
                     </div>
                 }
             </nav>
@@ -78,4 +60,4 @@ const mapDispatchToProps = {
     logout
 };
 
-export default connect(mapStateToProps, mapDispatchToProps) ( windowSize(HeaderComponent));
+export default connect(mapStateToProps, mapDispatchToProps) (windowSize(HeaderComponent));
