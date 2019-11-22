@@ -1,63 +1,8 @@
 import React from "react";
 import "./styles/index.css"
-import transport from "nodemailer"
-import creds from "../../config";
 
 
 export default class ContactComponent extends React.Component {
-
-    sendEmail = (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("contact-message").value;
-
-        const htmlBody = `
-            <div>
-                <p>You have a new contact request</p>
-                <h3>Contact information:</h3>
-                <ul>
-                   <li>Name: ${name} </li>
-                   <li>From: ${email}</li>
-                   <li>Subject: ${subject}</li>
-                </ul>
-                <h3>Message from sender:</h3>
-                <p>${message}</p>
-            </div>
-        `;
-
-        const transporter = transport.createTransport({
-            host: "mail.one.com",
-            port: 465,
-            secure: true,
-            auth: {
-                user: creds.USER,
-                pass: creds.PASS
-            },
-            tls: {
-                rejectUnauthorized: false
-            }
-        });
-
-        const mail = {
-            from: creds.USER,
-            to: "sverre@rubato.no",
-            subject: subject,
-            html: htmlBody
-        };
-
-        transporter.sendMail(mail, (err, data) => {
-            if (err) {
-                console.log("Failed to send...\n" + err)
-            } else {
-                console.log("Sent it...")
-            }
-        })
-
-
-    };
-
 
     render() {
         return (
@@ -65,7 +10,7 @@ export default class ContactComponent extends React.Component {
                 <div id="contact-image">
                     <img src="" alt="Kontakt bilde"/>
                 </div>
-                <form id="contact-form" metod="POST" onSubmit={this.sendEmail.bind(this)} >
+                <form id="contact-form">
                     <div id="div_input">
                         <label htmlFor="name-input">Name</label><br/>
                         <input type="text" className="standard-input" id="name" required/>
