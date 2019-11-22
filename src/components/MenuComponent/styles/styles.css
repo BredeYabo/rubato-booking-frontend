@@ -1,0 +1,152 @@
+:focus {
+    outline: none !important;
+}
+
+.headerContainer {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo {
+    justify-content: left;
+    width: auto;
+    height: 100px;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+.menu_list {
+    margin-right: 40px;
+    list-style: none;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.nav_button {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    margin: 10px 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Futura,Arial, sans-serif;
+    outline: none;
+    transition: background-color 0.2s;
+    color: var(--dark-gray);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav_button:hover {
+    color: #000;
+}
+
+.is-logged-in {
+    transition: background-color 0.3s;
+}
+
+.is-not-logged-in {
+    transition: background-color 0.3s;
+}
+
+.is-logged-in:hover {
+
+    color:var(--logout-red);
+}
+
+.is-not-logged-in:hover{
+
+    color: var(--login-blue);
+}
+
+.sm_icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+}
+
+/* Position and sizing of burger button */
+.burgerIconNormal {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    right: 8vw;
+    top: 36px;
+}
+.burgerIconHidden{
+    opacity: 0;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: var(--dark-gray);
+}
+
+/* Position and sizing of clickable cross button */
+.burgerCrossIcon {
+    min-width: 50px;
+    min-height: 50px;
+    padding: 20px;
+    opacity: 0.85;
+    margin-top: -50px;
+}
+
+/* Color/shape of close button cross */
+
+
+.burgerMenu{
+    padding-left: 20px;
+    padding-top: 10vh;
+    margin-top: -50px;
+    opacity: 1;
+    background-color: #fff;
+
+
+}
+
+.burgerItem{
+    text-align: center;
+}
+
+@media only screen and (max-width: 780px) {
+    .header_logo{
+        height: 13vw;
+    }
+
+    .nav_button{
+
+        padding-left: 0px;
+        margin-right: 0px;
+        font-size: 5vw;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+
+        justify-content: center;
+
+    }
+
+
+
+    .nav_button:active {
+        border-bottom: none;
+    }
+
+    .button_login{
+        background-color: transparent;
+        transition: background-color 0.3s;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .header_logo{
+        height: 11vw;
+        transition: 0.1s;
+    }
+
+}
