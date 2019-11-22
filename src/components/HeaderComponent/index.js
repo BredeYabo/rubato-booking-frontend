@@ -29,19 +29,18 @@ class HeaderComponent extends Component{
                             :
                             <Link to="/login" className="nav_button is-not-logged-in">logg inn</Link>
                         }
-                        <Link to="/" className={'nav_button'}>kontakt</Link>
-                        <Link to="/" className="nav_button">om</Link>
+                        <Link to="/kontakt" className={'nav_button'}>kontakt</Link>
+                        <Link to="/om" className="nav_button">om</Link>
                     </BurgerMenu>
                     :
                     <div className="menu_list">
-                        {/* Nav buttons */}
                         { this.props.username ?
                             <Link to="/" className="nav_button is-logged-in" onClick={() => this.props.logout()} >logg ut</Link>
                             :
                             <Link to="/login" className="nav_button is-not-logged-in">logg inn</Link>
                         }
-                        <Link to="/" className={'nav_button'}>kontakt</Link>
-                        <Link to="/" className="nav_button">om</Link>
+                        <Link to="/kontakt" className={'nav_button'}>kontakt</Link>
+                        <Link to="/om" className="nav_button">om</Link>
                     </div>
                 }
             </nav>
