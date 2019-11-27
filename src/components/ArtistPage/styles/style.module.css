@@ -21,7 +21,7 @@
     width: 90%;
 }
 
-.instagramFeed {
+.socialMedia {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -84,7 +84,7 @@
     border-radius: 4px;
 }
 
-.socialMedias {
+.socialMediaHandles {
     width: 100%;
     display: flex;
     align-items: center;

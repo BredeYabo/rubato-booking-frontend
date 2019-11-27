@@ -1,24 +1,22 @@
 import React,{Component} from 'react';
 import artistImage from '../../res/images/rubato.jpg';
 import shadowGradient from '../../res/images/shadow_gradient.png';
-import './styles/styles.css';
+import  styles from './styles/styles.module.css';
 import '../../res/fonts/futura.ttf'
-
-// import ExampleComponent from "./components/ExampleComponent";
 
 export default class ArtistPreviewComponent extends Component{
 
     render() {
         return(
-            <div className='artistPreviewContainer'>
-                <div className={'artistInfoContainer'}>
-                    <div className='artistText' >
-                        <div className={'artistName'}> Navn</div>
-                        <div className={'artistInfo'}> DJ, Oslo</div>
+            <div className={styles.artistPreviewContainer}>
+                <div className={styles.artistInfoContainer}>
+                    <div className={styles.artistText} >
+                        <div className={styles.artistName}> Navn</div>
+                        <div> DJ, Oslo</div>
                     </div>
-                    <img className={'shadowGradient'} src={shadowGradient} alt={'shadowGradient'}/>
+                    <img className={styles.shadowGradient} src={shadowGradient} alt={'shadowGradient'}/>
                 </div>
-                <img className={'artistImage'} src={artistImage} alt={'artistImage'}/>
+                <img className={styles.artistImage} src={artistImage} alt={'artistImage'}/>
             </div>
         )
     }

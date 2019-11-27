@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import withInstagramFeed from 'origen-react-instagram-feed';
-import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import compose from 'recompose/compose';
