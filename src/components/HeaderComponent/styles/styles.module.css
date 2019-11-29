@@ -5,13 +5,13 @@
 .headerContainer {
     display: flex;
     height: 100px;
-    width: 100%;
+    width: 100vw;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.header_logo {
+.headerLogo {
     justify-content: left;
     width: auto;
     height: 100px;
@@ -19,14 +19,14 @@
     margin-right: 10px;
 }
 
-
 @media only screen and (max-width: 780px) {
-    .header_logo{
+    .headerLogo{
         height: 13vw;
     }
 }
+
 @media only screen and (max-width: 400px) {
-    .header_logo{
+    .headerLogo{
         height: 11vw;
         transition: 0.1s;
     }

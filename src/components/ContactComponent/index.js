@@ -1,37 +1,33 @@
 import React from "react";
-import "./styles/index.css"
+import styles from './styles/styles.module.css'
 import artistImage from '../../res/images/artist3.jpeg';
+import cx from 'classnames';
 
 export default class ContactComponent extends React.Component {
 
     render() {
         return (
-            <div className="contact-page">
-                <div className="contact-image-container ">
-                    <img className="contact-image" src={artistImage} alt="Kontakt bilde"/>
-                </div>
+            <div className={styles.contact_page}>
+                <img className={styles.contact_image}src={artistImage} alt="Kontakt bilde"/>
                 <div className="contact-form">
                     <form >
-                        <div className="contact-header">
+                        <div className={styles.contact_header}>
                             Kontakt oss
                         </div>
-                        <div className="div_input">
-
-                            <input placeholder={"navn"} type="text" className="standard-input name" required/>
+                        <div>
+                            <input placeholder={"navn"} type="text" className={styles.standard_input} required/>
                         </div>
-                        <div className="div_email">
-
-                            <input placeholder={"email"} type="email" className="standard-input email" required/>
+                        <div>
+                            <input placeholder={"email"} type="email" className={styles.standard_input} required/>
                         </div>
-                        <div className="div_subject">
+                        <div>
 
-                            <input placeholder={"emne"}className="standard-input subject" type="text"  required/>
+                            <input placeholder={"emne"} className={styles.standard_input} type="text"  required/>
                         </div>
-                        <div className="div_message">
-
-                            <textarea placeholder={"melding"} type="text" className="standard-input contact-message" rows="6" cols="46"  />
+                        <div>
+                            <textarea placeholder={"melding"} type="text" className={cx(styles.standard_input, styles.contact_message)} rows="6" cols="46"/>
                         </div>
-                        <button type="submit" className=" form-submit ">Send</button>
+                        <button type="submit" className={styles.form_submit}>send</button>
                     </form>
                 </div>
             </div>

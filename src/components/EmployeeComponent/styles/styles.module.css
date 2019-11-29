@@ -1,0 +1,30 @@
+.employeePicture {
+    border-radius: 100%;
+    border: 10px #f4f4f4 solid;
+    height: 200px;
+    width: 200px;
+    background-position: top;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.employeeCard {
+    text-align: center;
+}
+
+.employeeHeader {
+    color: var(--dark-gray);
+}
+
+.employeeTitle {
+    color: var(--light-gray);
+}
+
+.employeeEmail > img {
+    width: 25px;
+    height: 25px;
+}
+
+.employee > * {
+    margin: 0;
+}

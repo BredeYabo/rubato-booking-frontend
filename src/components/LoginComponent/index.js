@@ -1,7 +1,6 @@
 import React from "react";
-import {login} from "../../redux/actions/userActions.js";
 import {connect} from "react-redux";
-import "./styles/index.css"
+import styles from './styles/styles.module.css'
 
 class LoginComponent extends React.Component {
 
@@ -29,12 +28,12 @@ class LoginComponent extends React.Component {
 
     render() {
         return (
-            <div className="loginContainer">
-                <form className="form" onSubmit={this.login}>
+            <div className={styles.loginContainer}>
+                <form className={styles.form} onSubmit={this.login}>
                     <input
                         name="username"
                         type="email"
-                        className="standard-input username"
+                        className={styles.standard_input}
                         placeholder="email"
                         autoComplete="off"
                         onChange={this.handleInputChange}
@@ -42,14 +41,14 @@ class LoginComponent extends React.Component {
                     <input
                         name="password"
                         type="password"
-                        className="standard-input "
+                        className={styles.standard_input}
                         placeholder="passord"
                         autoComplete="off"
                         onChange={this.handleInputChange}
                         minLength={8}
                         maxLength={16}
                         required />
-                    <input type="submit" className={"nav_button login_submit"} value={"logg inn"}/>
+                    <input type="submit" className={styles.login_submit} value={"logg inn"}/>
                 </form>
             </div>
         )
@@ -66,4 +65,4 @@ function mapStateToProps(state) {
 
 
 // connects these redux functions to the component
-export default connect(mapStateToProps, { login })(LoginComponent);
+export default connect(mapStateToProps)(LoginComponent);

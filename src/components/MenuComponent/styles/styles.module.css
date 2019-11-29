@@ -1,13 +1,11 @@
-:focus {
-    outline: none !important;
+@font-face {
+    font-family: 'Futura-font';
+    font-style: italic;
+    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
 }
 
-.header_logo {
-    justify-content: left;
-    width: auto;
-    height: 100px;
-    margin-left: 40px;
-    margin-right: 10px;
+:focus {
+    outline: none !important;
 }
 
 .menu_list {
@@ -24,8 +22,8 @@
     box-shadow: none;
     margin: 10px 5px;
     padding: 10px;
-    font-size: 20px;
-    font-family: Futura,Arial, sans-serif;
+    font-size: 1.5em;
+    font-family: Futura-font,Arial, sans-serif;
     outline: none;
     transition: background-color 0.2s;
     color: var(--dark-gray);
@@ -34,6 +32,7 @@
 }
 
 .nav_button_burger{
+    font-family: Futura-font,Arial, sans-serif;
     text-decoration: none;
     color: var(--dark-gray);
     cursor: pointer;
@@ -52,22 +51,23 @@
 .nav_button:hover {
     color: #000;
 }
+.nav_button_burger:hover {
+    color: #000;
+}
 
-.is-logged-in {
+.is_logged_in {
     transition: background-color 0.3s;
 }
 
-.is-not-logged-in {
+.is_not_logged_in {
     transition: background-color 0.3s;
 }
 
-.is-logged-in:hover {
-
+.is_logged_in:hover {
     color:var(--rubato-red);
 }
 
-.is-not-logged-in:hover{
-
+.is_not_logged_in:hover{
     color: var(--rubato-blue);
 }
 
@@ -79,11 +79,11 @@
 
 /* Position and sizing of burger button */
 .burgerIconNormal {
-    position: absolute;
-    width: 36px;
-    height: 30px;
-    right: 8vw;
-    top: 36px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    right: 2vw;
+
 }
 .burgerIconHidden{
     opacity: 0;
@@ -100,21 +100,21 @@
     min-height: 50px;
     padding: 20px;
     opacity: 0.85;
-    margin-top: -50px;
+    margin-top: -30px;
 }
 
 /* Color/shape of close button cross */
 
 
 .burgerMenu{
-    margin-top: -50px;
+    height: 110vh;
     opacity: 0.9;
     background-color: #fff;
     overflow: hidden;
 
 }
 .bm-menu-wrap{
-    height: 100vh;
+    height: 110vh;
     position: absolute;
 }
 .burgerItem{

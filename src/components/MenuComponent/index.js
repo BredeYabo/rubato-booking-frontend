@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
-import './styles/styles.css';
+import styles from './styles/styles.module.css';
 import '../../res/fonts/futura.ttf';
 import crossIcon from '../../res/icons/cross.svg';
+import burgerIcon from '../../res/icons/burgermenu.svg'
 import { Link } from "react-router-dom";
-import {login, logout} from "../../redux/actions/userActions";
 import {connect} from "react-redux";
 import {slide as BurgerMenu} from 'react-burger-menu';
-import {decorator as reduxBurgerMenu} from 'redux-burger-menu'
+import {decorator as reduxBurgerMenu} from 'redux-burger-menu';
 import windowSize from 'react-window-size';
+import cx from 'classnames';
 
 // import ExampleComponent from "./components/ExampleComponent";
 class MenuComponent extends Component{
@@ -35,37 +36,39 @@ class MenuComponent extends Component{
 
     render() {
         return(
-            <div className='menuContainer' >
+            <div className={styles.menu_list}>
                 {this.props.windowWidth < 780 ?
-                    <BurgerMenu menuClassName="burgerMenu"
-                                burgerButtonClassName={this.state.menuOpen? "burgerIconHidden" : "burgerIconNormal"}
-                                crossButtonClassName={"burgerCrossIcon"}
-                                itemListClassName={"burgerItem"}
+                    <BurgerMenu menuClassName={styles.burgerMenu}
+                                burgerButtonClassName={this.state.menuOpen? styles.burgerIconHidden: styles.burgerIconNormal}
+                                crossButtonClassName={styles.burgerCrossIcon}
+                                itemListClassName={styles.burgerItem}
                                 right
+                                noOverlay
                                 disableAutoFocus
                                 disableOverlayClick
                                 isOpen={this.state.menuOpen}
                                 width={this.props.windowWidth}
                                 onStateChange = {(state) => this.handleStateChange(state)}
                                 customCrossIcon={ <img src={crossIcon} alt={'X'}/>}
+                                customBurgerIcon={<img src={burgerIcon} alt={'='}/>}
                     >
                         { this.props.username ?
-                            <Link to="/" className="nav_button_burger is-logged-in" onClick={() => this.logoutBurger()} >logg ut</Link>
+                            <Link to="/" className={cx(styles.nav_button, styles.is_logged_in)} onClick={() => this.logoutBurger()} >logg ut</Link>
                             :
-                            <Link to="/login" className="nav_button_burger is-not-logged-in" onClick={this.closeMenu} >logg inn</Link>
+                            <Link to="/login" className={ cx(styles.nav_button_burger,styles.is_not_logged_in)} onClick={this.closeMenu} >logg inn</Link>
                         }
-                        <Link to="/kontakt" className={'nav_button_burger'} onClick={this.closeMenu} >kontakt</Link>
-                        <Link to="/om" className="nav_button_burger" onClick={this.closeMenu}>om</Link>
+                        <Link to="/kontakt" className={styles.nav_button_burger} onClick={this.closeMenu} >kontakt</Link>
+                        <Link to="/om" className={styles.nav_button_burger} onClick={this.closeMenu}>om</Link>
                     </BurgerMenu>
                     :
-                    <div className="menu_list">
+                    <div className={styles.menu_list}>
                         { this.props.username ?
-                            <Link to="/" className="nav_button is-logged-in" onClick={() => this.props.logout()} >logg ut</Link>
+                            <Link to="/" className={cx(styles.nav_button, styles.is_logged_in)} onClick={() => this.props.logout()} >logg ut</Link>
                             :
-                            <Link to="/login" className="nav_button is-not-logged-in">logg inn</Link>
+                            <Link to="/login" className={cx(styles.nav_button,styles.is_not_logged_in)}>logg inn</Link>
                         }
-                        <Link to="/kontakt" className={'nav_button'}>kontakt</Link>
-                        <Link to="/om" className="nav_button">om</Link>
+                        <Link to="/kontakt" className={styles.nav_button}>kontakt</Link>
+                        <Link to="/om" className={styles.nav_button}>om</Link>
                     </div>
                 }
             </div>
@@ -80,8 +83,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    login,
-    logout,
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps) (windowSize(reduxBurgerMenu(MenuComponent)));
