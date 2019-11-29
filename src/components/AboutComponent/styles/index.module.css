@@ -1,0 +1,45 @@
+.aboutPage {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto;
+}
+
+.aboutImage {
+    grid-column: 1 / span 2;
+    grid-row-start: 1;
+}
+
+.aboutContent {
+    grid-column: 3 / span 2;
+    grid-row-start: 1;
+    color: #111;
+    opacity: 0.8;
+    max-width: 400px;
+    margin-left: 75px;
+}
+
+.aboutEmployees {
+    grid-column: 1 / span 4;
+    grid-row-start: 2;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@media only screen and (max-width: 1000px) {
+    .aboutContent {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .aboutImage {
+        visibility: hidden;
+    }
+
+    .aboutContent {
+        grid-column: 1 / span 4;
+    }
+}
+

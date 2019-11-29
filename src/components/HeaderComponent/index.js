@@ -35,12 +35,11 @@ class HeaderComponent extends Component{
                                 <button className={styles.nav_button} id="button_login">Login</button>
                             </Link>
                         }
-
-                        <Link to="/">
+                        <Link to="/kontakt">
                             <button className={styles.nav_button}>Kontakt</button>
                         </Link>
 
-                        <Link to="/">
+                        <Link to="/om">
                             <button className={styles.nav_button}>Om</button>
                         </Link>
                     </BurgerMenu>
@@ -60,12 +59,13 @@ class HeaderComponent extends Component{
                                 <button className={styles.nav_button} id="button_login">Login</button>
                             </Link>
                         }
-                        <Link to="/">
+
+                        <Link to="/kontakt">
                             <button className={styles.nav_button}>Kontakt</button>
                         </Link>
 
 
-                        <Link to="/">
+                        <Link to="/om">
                             <button className={styles.nav_button}>Om</button>
                         </Link>
                     </div>
