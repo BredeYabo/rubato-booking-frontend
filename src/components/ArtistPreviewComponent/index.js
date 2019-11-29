@@ -7,9 +7,6 @@ import '../../res/fonts/futura.ttf'
 // import ExampleComponent from "./components/ExampleComponent";
 
 export default class ArtistPreviewComponent extends Component{
-    constructor(props){
-        super(props)
-    }
 
     render() {
         return(

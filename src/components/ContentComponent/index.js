@@ -13,6 +13,12 @@ export default class ContentComponent extends Component{
                     <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
                     <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
                     <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Test"} artistInfo={"DJ, Oslo"} />
+                    <ArtistPreviewComponent artistName={"Jørgen og bøllene"} artistInfo={"DJ, Oslo"} />
                 </div>
             </div>
         )

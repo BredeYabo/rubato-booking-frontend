@@ -5,13 +5,14 @@
   "dependencies": {
     "nodemailer": "^6.3.1",
     "react": "^16.10.2",
-    "react-burger-menu": "^2.6.11",
+    "react-burger-menu": "^2.6.12",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-window-size": "^1.2.2",
     "redux": "^4.0.4",
+    "redux-burger-menu": "^0.2.8",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {

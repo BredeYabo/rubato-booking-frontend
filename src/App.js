@@ -12,13 +12,12 @@ class App extends React.Component {
   render() {
     return(
         <div className={'mainContainer'}>
-
-            <Router>
-            <HeaderComponent/>
-                <Route exact path="/" component={ContentComponent}/>
-                <Route path="/login" component={LoginComponent}/>
-                <Route path="/kontakt" component={ContactComponent}/>
-                <Route path="/om" component={AboutComponent} />
+            <Router >
+                <HeaderComponent/>
+                    <Route exact path="/" component={ContentComponent}/>
+                    <Route path="/login" component={LoginComponent}/>
+                    <Route path="/kontakt" component={ContactComponent}/>
+                    <Route path="/om" component={AboutComponent} />
             </Router>
         </div>
     )

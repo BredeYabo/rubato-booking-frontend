@@ -55,6 +55,12 @@
         height: 40vw;
         width: 40vw;
     }
+    .artistName{
+        font-size: 1em;
+    }
+    .artistInfo{
+        font-size: 0.7em;
+    }
     .artistImage{
         height: 40vw;
         width: 40vw;

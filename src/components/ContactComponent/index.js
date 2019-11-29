@@ -1,34 +1,39 @@
 import React from "react";
 import "./styles/index.css"
-
+import artistImage from '../../res/images/artist3.jpeg';
 
 export default class ContactComponent extends React.Component {
 
     render() {
         return (
-            <div id="contact-component">
-                <div id="contact-image">
-                    <img src="" alt="Kontakt bilde"/>
+            <div className="contact-page">
+                <div className="contact-image-container ">
+                    <img className="contact-image" src={artistImage} alt="Kontakt bilde"/>
                 </div>
-                <form id="contact-form">
-                    <div id="div_input">
-                        <label htmlFor="name-input">Name</label><br/>
-                        <input type="text" className="standard-input" id="name" required/>
-                    </div>
-                    <div id="div_email">
-                        <label htmlFor="email-input">E-post</label><br/>
-                        <input type="email" className="standard-input" id="email" required/>
-                    </div>
-                    <div id="div_subject">
-                        <label htmlFor="subject_input">Subject</label><br/>
-                        <input type="text" className="standard-input" id="subject" required/>
-                    </div>
-                    <div id="div_message">
-                        <label htmlFor="message_input">Message</label><br/>
-                        <textarea type="text" id="contact-message" rows="15" cols="46"  />
-                    </div>
-                    <button type="submit" className="nav-button" id="button_login">Send</button>
-                </form>
+                <div className="contact-form">
+                    <form >
+                        <div className="contact-header">
+                            Kontakt oss
+                        </div>
+                        <div className="div_input">
+
+                            <input placeholder={"navn"} type="text" className="standard-input name" required/>
+                        </div>
+                        <div className="div_email">
+
+                            <input placeholder={"email"} type="email" className="standard-input email" required/>
+                        </div>
+                        <div className="div_subject">
+
+                            <input placeholder={"emne"}className="standard-input subject" type="text"  required/>
+                        </div>
+                        <div className="div_message">
+
+                            <textarea placeholder={"melding"} type="text" className="standard-input contact-message" rows="6" cols="46"  />
+                        </div>
+                        <button type="submit" className=" form-submit ">Send</button>
+                    </form>
+                </div>
             </div>
         )
     }

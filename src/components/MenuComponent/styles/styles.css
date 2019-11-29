@@ -2,15 +2,6 @@
     outline: none !important;
 }
 
-.headerContainer {
-    display: flex;
-    height: 100px;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .header_logo {
     justify-content: left;
     width: auto;
@@ -42,6 +33,22 @@
     cursor: pointer;
 }
 
+.nav_button_burger{
+    text-decoration: none;
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-left: 0;
+    font-size: 7vw;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.nav_button_burger:first-child{
+    margin-top: 15vh;
+}
+
 .nav_button:hover {
     color: #000;
 }
@@ -56,12 +63,12 @@
 
 .is-logged-in:hover {
 
-    color:var(--logout-red);
+    color:var(--rubato-red);
 }
 
 .is-not-logged-in:hover{
 
-    color: var(--login-blue);
+    color: var(--rubato-blue);
 }
 
 .sm_icon {
@@ -100,43 +107,32 @@
 
 
 .burgerMenu{
-    padding-left: 20px;
-    padding-top: 10vh;
     margin-top: -50px;
-    opacity: 1;
+    opacity: 0.9;
     background-color: #fff;
-
+    overflow: hidden;
 
 }
-
+.bm-menu-wrap{
+    height: 100vh;
+    position: absolute;
+}
 .burgerItem{
-    text-align: center;
+    margin-top: -120px;
+    padding-top: 120px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.bmOverlay{
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 780px) {
     .header_logo{
         height: 13vw;
     }
-
-    .nav_button{
-
-        padding-left: 0px;
-        margin-right: 0px;
-        font-size: 5vw;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-
-        justify-content: center;
-
-    }
-
-
-
-    .nav_button:active {
-        border-bottom: none;
-    }
-
     .button_login{
         background-color: transparent;
         transition: background-color 0.3s;
