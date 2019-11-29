@@ -1,45 +1,77 @@
-.aboutPage {
-    margin: 50px;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: auto auto;
+@font-face {
+    font-family: 'Futura-font';
+    font-style: italic;
+    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
 }
-
+.aboutPage {
+    display: grid;
+    grid-template-areas:    'about-image    about-content'
+                            'employees      employees';
+    justify-content: space-evenly;
+    font-family: Futura-font,Futura, Arial, Helvetica, serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
 .aboutImage {
-    grid-column: 1 / span 2;
-    grid-row-start: 1;
+    grid-area: about-image;
+    width: 40vw;
+    object-fit: cover;
 }
 
 .aboutContent {
-    grid-column: 3 / span 2;
-    grid-row-start: 1;
-    color: #111;
-    opacity: 0.8;
-    max-width: 400px;
-    margin-left: 75px;
+    margin-left: 2vw;
+    width: 40vw;
+    grid-area: about-content;
+}
+
+.aboutHeader {
+    font-size: 3em;
+}
+
+.aboutText{
+    font-size: 1em;
+    color: var(--dark-gray);
+}
+
+.aboutParagraph{
+    width: 30vw;
 }
 
 .aboutEmployees {
-    grid-column: 1 / span 4;
-    grid-row-start: 2;
-    justify-content: center;
+    grid-area: employees;
+    margin-top: 50px;
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 84vw;
 }
 
-@media only screen and (max-width: 1000px) {
-    .aboutContent {
-        margin-left: 0px;
-    }
+.aboutEmail{
+    color: var(--rubato-blue);
 }
 
-@media only screen and (max-width: 800px) {
-    .aboutImage {
-        visibility: hidden;
+@media only screen and (max-width: 780px) {
+    .aboutPage {
+        grid-template-areas: 'about-image' 'about-content' 'employees';
+        justify-content: space-between;
+    }
+    .aboutImage{
+        width: 80vw;
+        height: 30vh;
+    }
+    .aboutContent{
+        margin-top: 30px;
+        width: 80vw;
+    }
+    .aboutParagraph{
+        width: 100%;
+    }
+    .aboutEmployees{
+        flex-direction: column;
+
     }
 
-    .aboutContent {
-        grid-column: 1 / span 4;
-    }
 }
 

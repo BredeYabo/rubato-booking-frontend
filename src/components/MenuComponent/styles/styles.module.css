@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Futura-font';
+    font-style: italic;
+    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
+}
+
+:focus {
+    outline: none !important;
+}
+
+.menu_list {
+    margin-right: 40px;
+    list-style: none;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.nav_button {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    margin: 10px 5px;
+    padding: 10px;
+    font-size: 1.5em;
+    font-family: Futura-font,Arial, sans-serif;
+    outline: none;
+    transition: background-color 0.2s;
+    color: var(--dark-gray);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav_button_burger{
+    font-family: Futura-font,Arial, sans-serif;
+    text-decoration: none;
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-left: 0;
+    font-size: 7vw;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.nav_button_burger:first-child{
+    margin-top: 15vh;
+}
+
+.nav_button:hover {
+    color: #000;
+}
+.nav_button_burger:hover {
+    color: #000;
+}
+
+.is_logged_in {
+    transition: background-color 0.3s;
+}
+
+.is_not_logged_in {
+    transition: background-color 0.3s;
+}
+
+.is_logged_in:hover {
+    color:var(--rubato-red);
+}
+
+.is_not_logged_in:hover{
+    color: var(--rubato-blue);
+}
+
+.sm_icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+}
+
+/* Position and sizing of burger button */
+.burgerIconNormal {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    right: 2vw;
+
+}
+.burgerIconHidden{
+    opacity: 0;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: var(--dark-gray);
+}
+
+/* Position and sizing of clickable cross button */
+.burgerCrossIcon {
+    min-width: 50px;
+    min-height: 50px;
+    padding: 20px;
+    opacity: 0.85;
+    margin-top: -30px;
+}
+
+/* Color/shape of close button cross */
+
+
+.burgerMenu{
+    height: 110vh;
+    opacity: 0.9;
+    background-color: #fff;
+    overflow: hidden;
+
+}
+.bm-menu-wrap{
+    height: 110vh;
+    position: absolute;
+}
+.burgerItem{
+    margin-top: -120px;
+    padding-top: 120px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.bmOverlay{
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 780px) {
+    .header_logo{
+        height: 13vw;
+    }
+    .button_login{
+        background-color: transparent;
+        transition: background-color 0.3s;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .header_logo{
+        height: 11vw;
+        transition: 0.1s;
+    }
+
+}

@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Futura-font';
+    font-style: italic;
+    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
+}
+
+.contact_page {
+    display: grid;
+    grid-template-areas: 'contact-image contact-form ';
+    justify-content: space-evenly;
+    font-family: Futura-font,Futura, Arial,serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+.contact_image {
+    grid-area: contact-image;
+    width: 42vw;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-left: 0;
+}
+
+.contact_form {
+    margin-top: 0;
+    grid-area: contact-form;
+    width: 42vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact_header{
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.standard_input {
+
+    margin-bottom: 50px;
+    width: 29vw;
+    font-size: 1.5em;
+    background-color: inherit;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+
+.contact_message{
+    margin-top: 10px;
+    font-family: inherit;
+    font-size: 1em;
+    border: 0.3vh solid var(--dark-gray);
+    padding: 0.5vw;
+    width: 28vw;
+    max-height: 80vh;
+    resize: vertical;
+}
+
+.standard_input:focus {
+    outline: 0;
+}
+
+.form_submit{
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    margin: 10px 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30vw;
+    font-size: 1.5em;
+    margin-left: 0;
+    margin-top: 0px;
+    text-align: center;
+    background-color: var(--rubato-red);
+    color: #fff;
+
+}
+@media only screen and (max-width: 780px) {
+    .contact_page {
+        grid-template-areas: 'contact-image' 'contact-form';
+    }
+    .contact_image{
+        width: 80vw;
+        height: 30vh;
+        margin-bottom: 30px;
+    }
+    .contact_form{
+        margin-top: 20px;
+        width: 80vw;
+    }
+    .standard_input{
+        width: 79vw;
+    }
+    .contact_message{
+        width: 78vw;
+    }
+    .form_submit{
+        width: 80vw;
+    }
+
+}

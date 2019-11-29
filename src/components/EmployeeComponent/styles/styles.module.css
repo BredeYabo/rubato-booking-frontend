@@ -1,4 +1,4 @@
-#employee-picture {
+.employeePicture {
     border-radius: 100%;
     border: 10px #f4f4f4 solid;
     height: 200px;
@@ -8,29 +8,23 @@
     transition: 0.5s ease;
 }
 
-#employee-picture:hover {
-    transition: 0.5s ease;
-    border: 10px #e3e3e3 solid;
-}
-
-.employee-card {
-    margin: 0 auto;
+.employeeCard {
     text-align: center;
 }
 
-.employee-header {
-    color: #666666;
+.employeeHeader {
+    color: var(--dark-gray);
 }
 
-.employee-title {
-    color: #a2a5a4;
+.employeeTitle {
+    color: var(--light-gray);
 }
 
-.employee-email > img {
+.employeeEmail > img {
     width: 25px;
     height: 25px;
 }
 
 .employee > * {
-    margin: 0px;
+    margin: 0;
 }

@@ -1,16 +1,16 @@
 import React from "react"
-import "./styles/index.css"
+import styles from './styles/styles.module.css'
 
 
 export const EmployeeComponent = ({ firstname, restOfName, title,  email }) => {
     return(
-        <div className="employee-card">
-            <img src={`./employees/${firstname}.png`} alt={firstname + "bilde"} id="employee-picture"/>
-            <div className="employee">
-                <h3 className="employee-header">{restOfName}</h3>
-                <p className="employee-title">{title}</p>
-                <a className="employee-email" href={`mailto:${email}`}>
-                    <img src="./sm_icons/email_icon.svg" alt="emial"/>
+        <div className={styles.employeeCard}>
+            <img className={styles.employeePicture} src={`./employees/${firstname}.png`} alt={firstname + "bilde"} />
+            <div className={styles.employee}>
+                <h3 className={styles.employeeHeader}>{restOfName}</h3>
+                <p className={styles.employeeTitle}>{title}</p>
+                <a className={styles.employeeEmail} href={`mailto:${email}`}>
+                    <img src="./sm_icons/email_icon.svg" alt="email"/>
                 </a>
             </div>
         </div>
