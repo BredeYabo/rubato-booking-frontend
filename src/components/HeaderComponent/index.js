@@ -1,20 +1,20 @@
 import React,{Component} from 'react';
-import './styles/styles.css';
+import styles from './styles/styles.module.css';
 import '../../res/fonts/futura.ttf';
 import crossIcon from '../../res/icons/cross.svg';
 import { Link } from "react-router-dom";
-import {login, logout} from "../../redux/actions/userActions";
 import {connect} from "react-redux";
 import {slide as BurgerMenu} from 'react-burger-menu';
 import windowSize from 'react-window-size';
 
 
-// import ExampleComponent from "./components/ExampleComponent";
 class HeaderComponent extends Component{
     render() {
         return(
-            <nav className='headerContainer' id="header">
-                <Link to="/"><img src="rubato_logo.png"  alt="Rubato logo" id="header_logo"/></Link>
+            <nav className={styles.headerContainer} >
+                <Link to="/">
+                    <img src="http://localhost:3000/rubato_logo.png"  alt="Rubato logo" className={styles.headerLogo}/>
+                </Link>
                 {this.props.windowWidth < 780 ?
                     <BurgerMenu
                         right
@@ -24,20 +24,23 @@ class HeaderComponent extends Component{
                     >
                         { this.props.username ?
                             <Link to="/">
-                                <button className="nav_button" id="button_logout" onClick={() => this.props.logout()}>Logout</button>
+                                <button className={styles.nav_button}
+                                        id="button_logout"
+                                        onClick={() => this.props.logout()}>
+                                    Logout
+                                </button>
                             </Link>
                             :
                             <Link to="/login">
-                                <button className="nav_button" id="button_login">Login</button>
+                                <button className={styles.nav_button} id="button_login">Login</button>
                             </Link>
                         }
-
                         <Link to="/kontakt">
-                            <button className="nav_button">Kontakt</button>
+                            <button className={styles.nav_button}>Kontakt</button>
                         </Link>
 
                         <Link to="/om">
-                            <button className="nav_button">Om</button>
+                            <button className={styles.nav_button}>Om</button>
                         </Link>
                     </BurgerMenu>
                     :
@@ -45,20 +48,25 @@ class HeaderComponent extends Component{
                         {/* Nav buttons */}
                         { this.props.username ?
                             <Link to="/">
-                                <button className="nav_button" id="button_logout" onClick={() => this.props.logout()}>Logout</button>
+                                <button className={styles.nav_button}
+                                        id="button_logout"
+                                        onClick={() => this.props.logout()}>
+                                    Logout
+                                </button>
                             </Link>
                             :
                             <Link to="/login">
-                                <button className="nav_button" id="button_login">Login</button>
+                                <button className={styles.nav_button} id="button_login">Login</button>
                             </Link>
                         }
+
                         <Link to="/kontakt">
-                            <button className="nav_button">Kontakt</button>
+                            <button className={styles.nav_button}>Kontakt</button>
                         </Link>
 
 
                         <Link to="/om">
-                            <button className="nav_button">Om</button>
+                            <button className={styles.nav_button}>Om</button>
                         </Link>
                     </div>
                 }
@@ -74,8 +82,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    login,
-    logout
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps) ( windowSize(HeaderComponent));

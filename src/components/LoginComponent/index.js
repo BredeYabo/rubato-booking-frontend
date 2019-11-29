@@ -1,5 +1,4 @@
 import React from "react";
-import {login} from "../../redux/actions/userActions.js";
 import {connect} from "react-redux";
 import "./styles/index.css"
 
@@ -45,4 +44,4 @@ function mapStateToProps(state) {
 
 
 // connects these redux functions to the component
-export default connect(mapStateToProps, { login })(LoginComponent);
+export default connect(mapStateToProps)(LoginComponent);
