@@ -48,7 +48,34 @@ class LoginComponent extends React.Component {
                         minLength={8}
                         maxLength={16}
                         required />
-                    <input type="submit" className={styles.login_submit} value={"logg inn"}/>
+                    <input type="submit" className={styles.login_submit} value={"Logg inn"}/>
+                </form>
+
+                <form className={styles.form}>
+                    <input type="email"
+                           name="email"
+                           className={styles.standard_input}
+                           placeholder="email"
+                           autoComplete="off"
+                           onChange={this.handleInputChange}
+                           required
+                    />
+                    <input  type="password"
+                            name="passord"
+                            className={styles.standard_input}
+                            placeholder="passord"
+                            onChange={this.handleInputChange}
+                            required
+                    />
+                    <div className={styles.register_radio}>
+                        <input type="radio" className={styles.register_radio} id="artist" name="usertype" value="artist" />
+                        <label htmlFor="artist">Artist</label>
+                    </div>
+                    <div className={styles.register_radio}>
+                        <input type="radio" className={styles.register_radio_input} name="usertype" value="arrangor" />
+                        <label htmlFor="artist">Arrangør</label>
+                    </div>
+                    <input type="submit" className={styles.register_submit} value={"Registrer"}/>
                 </form>
             </div>
         )
