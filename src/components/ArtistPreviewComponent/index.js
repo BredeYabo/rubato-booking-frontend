@@ -7,13 +7,31 @@ import cx from 'classnames';
 
 export default class ArtistPreviewComponent extends Component{
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isHovered:false
+        }
+    }
+
+    handleOnHover = () =>{
+        this.setState({isHovered:true})
+    };
+
+    handleMouseLeave = () =>{
+        this.setState({isHovered:false})
+    };
+
     render() {
         return(
             <div className={styles.artistPreviewContainer}>
-                <div className={styles.artistInfoContainer}>
+                <div className={this.state.isHovered ?  cx(styles.artistInfoContainer,styles.artistHover): styles.artistInfoContainer}
+                     onMouseEnter={this.handleOnHover}
+                     onMouseLeave={this.handleMouseLeave}
+                >
                     <div className={styles.artistText} >
                         <div className={styles.artistName}>{this.props.artistName}</div>
-                        <div>{this.props.artistInfo}</div>
+                        <div className={styles.artistInfo}>{this.props.artistInfo}</div>
                     </div>
                     <img className={cx(styles.artistImage,styles.shadowGradient)} src={shadowGradient} alt={'shadowGradient'}/>
                 </div>
