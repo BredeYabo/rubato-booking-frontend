@@ -19,11 +19,9 @@
     width: 100%;
     opacity: 0;
     cursor: pointer;
-    z-index: 10;
 
 }
-
-.artistInfoContainer:hover{
+.artistHover{
     opacity: 1;
     transition: 0.5s;
 }
@@ -33,8 +31,18 @@
     left: 30px;
     color: #fff;
     z-index: 15;
-    font-size: 1em;
-    font-family: Futura-font, Arial, serif;
+    font-family: Futura-font,Roboto, Arial, serif;
+    padding-right: 10px;
+
+}
+
+.artistName{
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.artistInfo{
+    font-size: 1vw;
 }
 
 .shadowGradient{
@@ -48,15 +56,11 @@
     height: 19vw;
     width: 19vw;
     margin-top: -19vw;
-    z-index: 5;
     object-fit: cover;
 }
-.artistName{
-    font-weight: bold;
-    font-size: 1.5em;
-}
 
-@media only screen and (max-width: 780px) {
+
+@media only screen and (max-width: 1000px) {
     .artistPreviewContainer{
         display: flex;
         height: 40vw;
@@ -64,15 +68,23 @@
     }
 
     .artistName{
-        font-size: 1.5em;
+        font-size: 5vw;
     }
 
     .artistInfo{
-        font-size: 0.7em;
+        font-size: 3vw;
     }
 
     .artistPreviewContainer .artistImage{
         height: 40vw;
         width: 40vw;
     }
+}
+
+@media only screen and (max-width: 780px) {
+    .artistText{
+        left: 15px;
+        bottom:10px;
+    }
+
 }

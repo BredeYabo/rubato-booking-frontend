@@ -13,11 +13,13 @@
 }
 
 .employeeHeader {
-    color: var(--dark-gray);
+    font-size: 1em;
+    color: #000;
 }
 
 .employeeTitle {
-    color: var(--light-gray);
+    font-size: 1em;
+    color: var(--dark-gray);
 }
 
 .employeeEmail > img {
