@@ -17,6 +17,10 @@
   grid-area: footer;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 /*
   DEFAULT COLORS
 
