@@ -1,7 +1,8 @@
 .mainContainer {
   height: 100%;
   display: grid;
-  grid-template-areas: 'header ' 'contentContainer';
+  grid-template-areas: 'header ' 'contentContainer' 'footer';
+
 }
 
 .header {
@@ -10,6 +11,10 @@
 
 .contentContainer{
   grid-area: contentContainer;
+}
+
+.footer{
+  grid-area: footer;
 }
 
 /*
@@ -27,4 +32,5 @@
   --light-gray:#a2a5a4;
   --rubato-blue:#3690ff;
   --rubato-red: #ff4136;
+  --rubato-yellow:#ffe436;
 }
