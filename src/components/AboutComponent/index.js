@@ -1,13 +1,16 @@
 import React from "react"
-import styles from "./styles/index.module.css"
-import artistImage from '../../res/images/artist1.jpeg';
+import styles from "./styles/styles.module.css"
+import artistImage from '../../res/images/artist4.jpeg';
 import { EmployeeComponent } from "../EmployeeComponent";
 
 export default class AboutComponent extends React.Component {
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return(
-
             <div className={styles.aboutPage}>
                 <img className={styles.aboutImage} src={artistImage} alt="About bilde"/>
                 <div className={styles.aboutContent}>

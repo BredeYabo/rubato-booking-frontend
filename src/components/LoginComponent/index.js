@@ -12,6 +12,10 @@ class LoginComponent extends React.Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     login = () => {
         const username = this.state.username;
         // TODO: handle password

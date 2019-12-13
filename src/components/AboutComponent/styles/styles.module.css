@@ -3,19 +3,19 @@
     font-style: italic;
     src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
 }
+
 .aboutPage {
     display: grid;
     grid-template-areas:    'about-image    about-content'
                             'employees      employees';
     justify-content: space-evenly;
-    font-family: Futura-font,Futura, Arial, Helvetica, serif;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    font-family: Futura-font,Futura,Roboto, Arial, Helvetica, serif;
+    margin: 50px 8vw 0 8vw ;
 }
+
 .aboutImage {
     grid-area: about-image;
+    height: 100%;
     width: 40vw;
     object-fit: cover;
 }
@@ -27,16 +27,16 @@
 }
 
 .aboutHeader {
-    font-size: 3em;
+    font-size: 5vh;
 }
 
 .aboutText{
-    font-size: 1em;
+    font-size: 2.5vh;
     color: var(--dark-gray);
 }
 
 .aboutParagraph{
-    width: 30vw;
+    width: 100%;
 }
 
 .aboutEmployees {
@@ -46,13 +46,14 @@
     flex-direction: row;
     justify-content: space-evenly;
     width: 84vw;
+
 }
 
 .aboutEmail{
     color: var(--rubato-blue);
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1000px) {
     .aboutPage {
         grid-template-areas: 'about-image' 'about-content' 'employees';
         justify-content: space-between;
@@ -70,6 +71,9 @@
     }
     .aboutEmployees{
         flex-direction: column;
+
+    }
+    .aboutHeader{
 
     }
 
