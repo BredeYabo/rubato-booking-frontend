@@ -3,7 +3,6 @@ import SpotifyPlayer from "react-spotify-player";
 import YouTube from "react-youtube";
 import {Link, Element} from 'react-scroll'
 import styles from './styles/style.module.css';
-import '../../res/fonts/futura.ttf'
 import BookingForm from "./BookingForm";
 import SoundCloudPlayer from "./SoundCloudPlayer";
 import InstaGrid from "../InstaFeed";
@@ -11,7 +10,7 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
 import {getUser, getUserPending} from "../../redux/reducers/userReducer";
-import fetchUserAction from '../../redux/thunks/fetchUser'
+import {fetchUser} from '../../redux/thunks/fetchUser'
 
 
 class ArtistPage extends React.Component {
@@ -62,6 +61,24 @@ class ArtistPage extends React.Component {
                                 </a>
                                 : null
                             }
+
+                            {this.props.user.twitter != null ?
+                                <a className={styles.smHandle}
+                                   href={"https://www.twitter.com/" + this.props.user.twitter}>
+                                    <img src={"http://localhost:3000/sm_icons/tw_icon.svg"} alt={""}/>
+                                    <span>{this.props.user.twitter}</span>
+                                </a>
+                                : null
+                            }
+
+                            {this.props.user.youtube != null ?
+                                <a className={styles.smHandle}
+                                   href={"https://www.youtube.com/" + this.props.user.youtube}>
+                                    <img src={"http://localhost:3000/sm_icons/yt_icon.svg"} alt={""}/>
+                                    <span>{this.props.user.youtube}</span>
+                                </a>
+                                : null
+                            }
                         </div>
                         <div className={styles.instaFeedWrapper} >
                             {
@@ -76,6 +93,18 @@ class ArtistPage extends React.Component {
                         <h3>Om {this.props.user.name}:</h3>
                         {this.props.user.about.split('\n').map((item, i) => {
                             return <p key={i}>{item}</p>
+                        })}
+
+                        {this.props.user.quotes.map(item => {
+                            return (
+                                <div className={styles.quotes}>
+                                    <img src={"http://localhost:3000/quote.png"}/>
+                                    <div>
+                                        <span className={styles.quoteText}>- {item.quote}</span>
+                                        <span className={styles.quoteTextFrom}>{item.quoteFrom}</span>
+                                    </div>
+                                </div>
+                            )
                         })}
                     </div>
 
@@ -102,9 +131,9 @@ class ArtistPage extends React.Component {
     }
 
     renderMedia = () => {
-        let shouldRenderSoundCloud = this.props.user.soundcloud && this.props.user.soundcloud > 0;
-        let shouldRenderYoutube = this.props.user.video && this.props.user.video > 0;
-
+        let shouldRenderSoundCloud = this.props.user.soundcloud && this.props.user.soundcloud.length > 0;
+        let shouldRenderYoutube = this.props.user.videos && this.props.user.videos.length > 0;
+        console.log(this.props);
         let soundcloud = shouldRenderSoundCloud ?
             <div>
                 <h1 className={styles.sectionDivider}> SoundCloud </h1>
@@ -117,7 +146,7 @@ class ArtistPage extends React.Component {
         let youtube = shouldRenderYoutube ?
             <div>
                 <h1 className={styles.sectionDivider}> Youtube </h1>
-                {this.props.user.video.map(item => {
+                {this.props.user.videos.map(item => {
                     return <YouTube key={item.idVideo} className={styles.youtube} videoId={item.path} />
                 })}
             </div>
@@ -138,7 +167,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    fetchUser: fetchUserAction,
+    fetchUser: fetchUser,
 }, dispatch);
 
 export default compose(

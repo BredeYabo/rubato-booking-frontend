@@ -3,19 +3,24 @@ import {
     FETCH_USER_SUCCESS,
     FETCH_USER_ERROR
 } from "../actions/userActions.js"
+import {FETCH_ALL_USERS_SUCCESS} from "../actions/userActions";
 
 const initialState = {
     pending: false,
-    user: {
+    selectedUser: {
         name: "Name",
         artistType: "Artist",
         location: "Oslo",
         instagram: null,
         facebook: null,
+        twitter: null,
+        youtube: null,
         about: "",
+        quotes: [],
         coverImage: "https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/11/UniversalCoverings_2880x1220.gif",
         profileImage: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
     },
+    allUsers: [],
     error: null
 };
 
@@ -53,7 +58,7 @@ export function userReducer (state = initialState, action) {
             return {
                 ...state,
                 pending: false,
-                user: user,
+                selectedUser: user,
             };
 
         case FETCH_USER_ERROR:
@@ -62,12 +67,19 @@ export function userReducer (state = initialState, action) {
                 error: action.error,
             };
 
+        case FETCH_ALL_USERS_SUCCESS:
+            return {
+                ...state,
+                allUsers: action.users,
+            };
+
 
         default:
             return state;
     }
 }
 
-export const getUser = state => state.user.user;
+export const getUser = state => state.user.selectedUser;
+export const getAllUsers = state => state.user.allUsers;
 export const getUserPending = state => state.user.pending;
 export const getUserError = state => state.user.error;

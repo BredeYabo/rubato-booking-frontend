@@ -16,7 +16,7 @@ class App extends React.Component {
         <div className={'mainContainer'}>
             <Router>
                 <HeaderComponent/>
-                <Route exact path="/" component={ContentComponent}/>
+                <Route exact path="/" component={withLoadingScreen(ContentComponent)}/>
                 <Route path="/login" component={LoginComponent}/>
                 <Route path="/kontakt" component={ContactComponent}/>
                 <Route path="/artist/:artistId" component={withLoadingScreen(ArtistPage)}/>

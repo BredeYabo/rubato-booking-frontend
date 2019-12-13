@@ -42,6 +42,7 @@
 .artistPreviewContainer img {
     max-height: 100%;
     max-width: 100%;
+    object-fit: cover;
     height: 19vw;
     width: 19vw;
 }

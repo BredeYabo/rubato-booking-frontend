@@ -1,6 +1,8 @@
 @font-face {
     font-family: Futura;
-    src: local("src/res/fonts/futura.ttf");
+    src: url("/src/res/fonts/futura.ttf") format("truetype"),
+        url('/src/res/fonts/futura.woff') format('font-woff');
+
 }
 
 .artistPageRoot {
@@ -12,7 +14,7 @@
 .profileGrid {
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: 30% auto 30%;
+    grid-template-columns: 30% auto auto;
     grid-template-rows: 23rem auto auto;
     grid-template-areas:
             "profileCover cover cover"
@@ -105,14 +107,48 @@
     color: whitesmoke;
     background-color: #2e2e2e;
     font-size: 20px;
+    font-family: Futura-font, Futura, Roboto, sans-serif;
 }
 
 .artistDescription {
     grid-area: desc;
     margin: 1rem;
-    width: 100%;
     font-size: 20px;
     color: #2e2e2e;
+    font-family: Futura-font, Futura, Roboto, sans-serif;
+}
+
+.quotes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.quotes div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.quotes img {
+    margin-right: 3rem;
+}
+
+.quotes span {
+    font-size: 16px;
+    line-height: 26px;
+    font-family: Arial sans-serif;
+}
+
+.quoteText {
+    font-style: italic;
+}
+
+.quoteTextFrom {
+    font-weight: bold;
 }
 
 .media {

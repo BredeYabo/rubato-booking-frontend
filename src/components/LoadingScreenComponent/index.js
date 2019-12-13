@@ -14,7 +14,7 @@ export default WrappedComponent => {
             this.props.startLoading();
             this.setState({
                 timestamp: new Date(),
-                minTimeout: 1000,
+                minTimeout: 500,
             });
         }
 
