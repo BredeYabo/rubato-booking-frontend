@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {connect} from "react-redux";
 import styles from './styles/styles.module.css'
 
@@ -8,7 +8,10 @@ class LoginComponent extends React.Component {
         super(props);
         this.state = {
             username:'',
-            password:''
+            password:'',
+            ny_email: '',
+            ny_passord: '',
+            user_type: ''
         }
     }
 
@@ -24,12 +27,6 @@ class LoginComponent extends React.Component {
         this.props.history.push("/")
     };
 
-    handleInputChange =(event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        this.setState({[name]: value})
-    };
-
     render() {
         return (
             <div className={styles.loginContainer}>
@@ -40,7 +37,7 @@ class LoginComponent extends React.Component {
                         className={styles.standard_input}
                         placeholder="email"
                         autoComplete="off"
-                        onChange={this.handleInputChange}
+                        onChange={e => this.setState({username: e.target.value})}
                         required />
                     <input
                         name="password"
@@ -48,11 +45,45 @@ class LoginComponent extends React.Component {
                         className={styles.standard_input}
                         placeholder="passord"
                         autoComplete="off"
-                        onChange={this.handleInputChange}
+                        onChange={e => this.setState({password: e.target.value})}
                         minLength={8}
                         maxLength={16}
                         required />
-                    <input type="submit" className={styles.login_submit} value={"logg inn"}/>
+                    <input type="submit" className={styles.login_submit} value={"Logg inn"}/>
+                </form>
+
+                <form className={styles.form}>
+                    <input type="email"
+                           name="email"
+                           className={styles.standard_input}
+                           placeholder="email"
+                           autoComplete="off"
+                           onChange={e => this.setState({ny_email: e.target.value})}
+                           required
+                    />
+                    <input  type="password"
+                            name="passord"
+                            className={styles.standard_input}
+                            placeholder="passord"
+                            onChange={e => this.setState({ny_password: e.target.value})}
+                            required
+                    />
+
+                    <div className={styles.user_type}>
+                        <div className={this.state.user_type === "artist" ? styles.user_type__selected : styles.user_type__choice}
+                            onClick={() => this.setState({user_type: "artist"})}>
+                            <p className={this.state.user_type === "artist" ? styles.label_content : styles.label_content_selected}>Artist</p>
+                        </div>
+                        <div className={this.state.user_type === "arrangor" ? styles.user_type__selected : styles.user_type__choice}
+                             onClick={() => this.setState({user_type: "arrangor"})}>
+                            <p className={this.state.user_type === "arrangor" ? styles.label_content : styles.label_content_selected}>Arrangør</p>
+                        </div>
+                    </div>
+
+                    <input type="submit"
+                           className={styles.register_submit}
+                           value="Registrer"
+                    />
                 </form>
             </div>
         )
