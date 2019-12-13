@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Futura-font';
+    font-style: italic;
+    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
+}
+
+.contact_page {
+    display: grid;
+    grid-template-areas: 'contact-image contact-form ';
+    justify-content: space-evenly;
+    font-family: Futura-font,Futura,Roboto, Arial, Helvetica, serif;
+    margin: 50px 8vw;
+}
+
+.contact_image {
+    grid-area: contact-image;
+    height: 100%;
+    width: 40vw;
+    object-fit: cover;
+}
+
+.contact_form {
+    margin-left: 2vw;
+    grid-area: contact-form;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_header{
+    font-size: 5vh;
+    margin-bottom: 30px;
+}
+
+.standard_input {
+    margin-bottom: 50px;
+    width: 29vw;
+    font-size: 2.5vh;
+    background-color: inherit;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid var(--dark-gray);
+    color: var(--dark-gray);
+}
+
+
+.contact_message{
+    margin-top: 10px;
+    font-family: inherit;
+    font-size: 2.5vh;
+    width: 29vw;
+    max-height: 80vh;
+    resize: vertical;
+}
+
+.standard_input:focus {
+    outline: 0;
+}
+
+.form_submit{
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    width: 29vw;
+    font-size: 2.5vh;
+    margin: 0 5px 10px 0;
+    text-align: center;
+    background-color: var(--rubato-red);
+    color: #fff;
+
+}
+@media only screen and (max-width: 780px) {
+    .contact_page {
+        grid-template-areas: 'contact-image' 'contact-form';
+    }
+    .contact_image{
+        width: 80vw;
+        height: 30vh;
+        margin-bottom: 30px;
+    }
+    .contact_form{
+        margin-top: 20px;
+        width: 80vw;
+    }
+    .standard_input{
+        width: 79vw;
+    }
+    .contact_message{
+        width: 78vw;
+    }
+    .form_submit{
+        width: 80vw;
+    }
+
+}

@@ -1,0 +1,114 @@
+.loginContainer {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+}
+
+.form {
+    margin: 10px 0;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.standard_input {
+    margin-bottom: 50px;
+    width: 30vw;
+    font-size: 1.5em;
+    background-color: inherit;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+.login_submit{
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30vw;
+    font-size: 1.5em;
+    margin-left: 0;
+    margin-top: 0px;
+    text-align: center;
+    background-color: var(--rubato-red);
+    color: #fff;
+
+}
+
+.register_submit {
+    composes: login_submit;
+    background-color: var(--rubato-blue);
+}
+
+.user_type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+
+    height: 48px;
+}
+
+.user_type__choice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    transition: background-color ease 0.3s;
+}
+
+
+.user_type__selected {
+    composes: user_type__choice;
+    background-color: var(--light-gray);
+
+}
+
+.label_content {
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 10px;
+    user-select: none;
+}
+
+.label_content_selected {
+    composes: label_content;
+    color: var(--light-gray);
+}
+
+@media only screen and (max-width: 780px) {
+    .loginContainer {
+        flex-direction: column;
+        margin-top: 175px;
+        margin-left: 5vh;
+    }
+
+    .form{
+        width: 80vw;
+        margin-top: 70px;
+    }
+    .standard_input{
+        font-size: 2em;
+        width: 80vw;
+    }
+
+    .login_submit{
+        width: 80vw;
+        margin-left: 0;
+        font-size: 2em;
+        transition: 0s;
+    }
+
+}

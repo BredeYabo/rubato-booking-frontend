@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './styles/styles.css';
+import styles from './styles/styles.module.css'
 import ArtistPreviewComponent from "../ArtistPreviewComponent";
 import {getAllUsers, getUserPending} from "../../redux/reducers/userReducer";
 import {bindActionCreators} from "redux";
@@ -16,12 +16,12 @@ class ContentComponent extends Component{
 
     render() {
         return(
-            <div className={'contentContainer'} >
+            <div className={styles.contentContainer} >
                 <InfiniteScroll next={this.props.fetchAllUsers}
                                 hasMore={false}
                                 loader={<h4>Loading...</h4>}
                                 dataLength={this.props.users.length}
-                                className={'artistGrid'}>
+                                className={styles.artistGrid}>
                     {this.props.users.map((user) => {
                         return <ArtistPreviewComponent key={user.personId} artist={user}/>
                     })}

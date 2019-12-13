@@ -3,7 +3,7 @@
     flex-direction: row;
     height: 100%;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #FFF;
     justify-items: center;
     justify-content: center;
 }
@@ -20,7 +20,7 @@
     grid-template-columns: repeat(auto-fill, 19vw);
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1000px) {
     .artistGrid{
         margin-top: 2vw;
         margin-bottom: 2vw;

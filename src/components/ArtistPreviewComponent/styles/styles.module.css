@@ -3,6 +3,7 @@
     font-style: italic;
     src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
 }
+
 .artistPreviewContainer{
     display: flex;
     flex-direction: column;
@@ -10,7 +11,7 @@
     height: 19vw;
     width: 19vw;
     position: relative;
-    font-family: Futura, Arial, sans-serif;
+
 }
 
 .artistInfoContainer{
@@ -18,10 +19,9 @@
     width: 100%;
     opacity: 0;
     cursor: pointer;
-    z-index: 10;
-}
 
-.artistInfoContainer:hover{
+}
+.artistHover{
     opacity: 1;
     transition: 0.5s;
 }
@@ -29,41 +29,63 @@
     position: absolute;
     bottom: 20px;
     left: 30px;
-    color: #FFFFFF;
+    color: #fff;
     z-index: 15;
-    font-size: 1em;
+    font-family: Futura-font,Roboto, Arial, serif;
+    padding-right: 10px;
+
+}
+
+.artistName{
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.artistInfo{
+    font-size: 1vw;
 }
 
 .shadowGradient{
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
 }
 
-.artistPreviewContainer img {
+.artistPreviewContainer .artistImage {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
     height: 19vw;
     width: 19vw;
-}
-
-.artistImage{
     margin-top: -19vw;
-    z-index: 5;
-}
-.artistName{
-    font-weight: bold;
-    font-size: 1.5em;
+    object-fit: cover;
 }
 
-@media only screen and (max-width: 780px) {
+
+@media only screen and (max-width: 1000px) {
     .artistPreviewContainer{
         display: flex;
         height: 40vw;
         width: 40vw;
     }
-    .artistPreviewContainer img{
+
+    .artistName{
+        font-size: 5vw;
+    }
+
+    .artistInfo{
+        font-size: 3vw;
+    }
+
+    .artistPreviewContainer .artistImage{
         height: 40vw;
         width: 40vw;
     }
+}
+
+@media only screen and (max-width: 780px) {
+    .artistText{
+        left: 15px;
+        bottom:10px;
+    }
+
 }

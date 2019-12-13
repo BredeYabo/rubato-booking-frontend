@@ -98,7 +98,7 @@ class ArtistPage extends React.Component {
                         {this.props.user.quotes.map(item => {
                             return (
                                 <div className={styles.quotes}>
-                                    <img src={"http://localhost:3000/quote.png"}/>
+                                    <img src={"http://localhost:3000/quote.png"} alt={""}/>
                                     <div>
                                         <span className={styles.quoteText}>- {item.quote}</span>
                                         <span className={styles.quoteTextFrom}>{item.quoteFrom}</span>
@@ -124,8 +124,6 @@ class ArtistPage extends React.Component {
 
                 <Element name={'formAnchor'}/>
                 <BookingForm name={this.props.user.name} />
-
-                <div className={styles.footerPlaceholder}/>
             </div>
         )
     }

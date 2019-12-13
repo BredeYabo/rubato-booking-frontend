@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Futura-font';
+    font-style: italic;
+    src:local('Futura'), url('/src/res/fonts/futura.ttf') format('truetype');
+}
+
+:focus {
+    outline: none !important;
+}
+
+.menu_list {
+    margin-right: 40px;
+    list-style: none;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.nav_button {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    margin: 10px 5px;
+    padding-left: 10px;
+    font-size: 1.5em;
+    font-family: Futura-font,Roboto,Arial, sans-serif;
+    outline: none;
+    transition: background-color 0.2s;
+    color: var(--dark-gray);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav_button_burger{
+    font-family: Futura-font,Arial, sans-serif;
+    text-decoration: none;
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-left: 0;
+    font-size: 10vw;
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: center;
+    text-align: center;
+}
+.nav_button_burger:first-child{
+    margin-top: 15vh;
+}
+
+.nav_button:hover {
+    color: #000;
+}
+.nav_button_burger:hover {
+    color: #000;
+}
+
+.is_logged_in {
+    transition: background-color 0.3s;
+}
+
+.is_not_logged_in {
+    transition: background-color 0.3s;
+}
+
+.is_logged_in:hover {
+    color:var(--rubato-red);
+}
+
+.is_not_logged_in:hover{
+    color: var(--rubato-blue);
+}
+
+/* Position and sizing of burger button */
+.burgerIconNormal {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    right: 2vw;
+    cursor: pointer;
+
+}
+.burgerIconHidden{
+    opacity: 0;
+}
+
+/* Position and sizing of clickable cross button */
+.crossIcon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    cursor: pointer;
+}
+
+/* Color/shape of close button cross */
+.modalMenu{
+    background-color: #ffffff;
+    opacity: 0.8;
+    height: 100vh;
+    transition: 0.1s;
+    z-index: 1000;
+}
+
+.menu_button_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 780px) {
+    .header_logo{
+        height: 13vw;
+    }
+    .button_login{
+        background-color: transparent;
+        transition: background-color 0.3s;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .header_logo{
+        height: 11vw;
+        transition: 0.1s;
+    }
+
+}

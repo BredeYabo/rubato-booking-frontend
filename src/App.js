@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import ContactComponent from "./components/ContactComponent";
 import withLoadingScreen from "./components/LoadingScreenComponent";
 import AboutComponent from "./components/AboutComponent";
+import Footer from "./components/FooterComponent"
 
 class App extends React.Component {
 
@@ -15,12 +16,13 @@ class App extends React.Component {
     return(
         <div className={'mainContainer'}>
             <Router>
-                <HeaderComponent/>
-                <Route exact path="/" component={withLoadingScreen(ContentComponent)}/>
-                <Route path="/login" component={LoginComponent}/>
-                <Route path="/kontakt" component={ContactComponent}/>
-                <Route path="/artist/:artistId" component={withLoadingScreen(ArtistPage)}/>
-                <Route path="/om" component={AboutComponent} />
+                <HeaderComponent className={"header"}/>
+                <Route exact path="/" component={withLoadingScreen(ContentComponent)} className={"contentContainer"}/>
+                <Route path="/login" component={LoginComponent} className={"contentContainer"}/>
+                <Route path="/kontakt" component={ContactComponent} className={"contentContainer"}/>
+                <Route path="/artist/:artistId" component={withLoadingScreen(ArtistPage)} className={"contentContainer"}/>
+                <Route path="/om" component={AboutComponent} className={"contentContainer"} />
+                <Footer className={"footer"}/>
             </Router>
         </div>
     )
