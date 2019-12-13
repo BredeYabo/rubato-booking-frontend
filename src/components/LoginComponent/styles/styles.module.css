@@ -1,19 +1,17 @@
 .loginContainer {
     width: 100%;
     height: 40vh;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-areas:
+            'login register';
+    justify-content: center;
+    grid-column-gap: 10vw;
     margin-top: 10vh;
 }
 
-.form {
+.login, .register {
     margin: 10px 0;
     width: 30vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .standard_input {
@@ -35,12 +33,10 @@
     padding-bottom: 10px;
     width: 30vw;
     font-size: 1.5em;
-    margin-left: 0;
-    margin-top: 0px;
+    margin: 0;
     text-align: center;
     background-color: var(--rubato-red);
     color: #fff;
-
 }
 
 .register_submit {
@@ -51,19 +47,17 @@
 .user_type {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     align-content: center;
+    width: 100%;
     justify-content: space-evenly;
     margin-bottom: 5vh;
-
-    height: 48px;
 }
 
 .user_type__choice {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 50%;
     transition: background-color ease 0.3s;
 }
@@ -72,14 +66,12 @@
 .user_type__selected {
     composes: user_type__choice;
     background-color: var(--light-gray);
-
 }
 
 .label_content {
     color: white;
     font-size: 1.5em;
     margin: 0;
-    padding: 10px;
     user-select: none;
 }
 
@@ -90,15 +82,16 @@
 
 @media only screen and (max-width: 780px) {
     .loginContainer {
-        flex-direction: column;
-        margin-top: 175px;
-        margin-left: 5vh;
+        display: grid;
+        grid-template-areas:
+                'login'
+                'register';
+        grid-row-gap: 10vh;
+        justify-content: space-between;
+        margin-left: 10vw;
+        margin-bottom: 50vh;
     }
 
-    .form{
-        width: 80vw;
-        margin-top: 70px;
-    }
     .standard_input{
         font-size: 2em;
         width: 80vw;
@@ -108,7 +101,9 @@
         width: 80vw;
         margin-left: 0;
         font-size: 2em;
-        transition: 0s;
     }
 
+    .user_type {
+        width: 80vw;
+    }
 }

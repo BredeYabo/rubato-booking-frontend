@@ -15,6 +15,7 @@ class App extends React.Component {
   render() {
     return(
         <div className={'mainContainer'}>
+
             <Router>
                 <HeaderComponent className={"header"}/>
                 <Route exact path="/" component={ContentComponent} className={"contentContainer"}/>
@@ -24,6 +25,7 @@ class App extends React.Component {
                 <Route path="/om" component={AboutComponent} className={"contentContainer"} />
                 <Footer className={"footer"}/>
             </Router>
+
         </div>
     )
   }

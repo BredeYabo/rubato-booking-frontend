@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {connect} from "react-redux";
 import styles from './styles/styles.module.css'
 
@@ -11,7 +11,7 @@ class LoginComponent extends React.Component {
             password:'',
             ny_email: '',
             ny_passord: '',
-            user_type: ''
+            user_type: 'artist'
         }
     }
 
@@ -30,7 +30,7 @@ class LoginComponent extends React.Component {
     render() {
         return (
             <div className={styles.loginContainer}>
-                <form className={styles.form} onSubmit={this.login}>
+                <form className={styles.login} onSubmit={this.login}>
                     <input
                         name="username"
                         type="email"
@@ -52,7 +52,7 @@ class LoginComponent extends React.Component {
                     <input type="submit" className={styles.login_submit} value={"Logg inn"}/>
                 </form>
 
-                <form className={styles.form}>
+                <form className={styles.register}>
                     <input type="email"
                            name="email"
                            className={styles.standard_input}
