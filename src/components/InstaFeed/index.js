@@ -25,7 +25,7 @@ const InstaFeed = ({ classes, media, account, status}: Props) => {
             {media &&
             status === 'completed' &&
             media.map(({ displayImage, id, postLink, accessibilityCaption }) => (
-                <Grid item xs={6} sm={3} key={id || displayImage} >
+                <Grid item xs={6} sm={3} key={id || displayImage} className={"instaContainer"} >
                     <ButtonBase
                         href={postLink || `https://www.instagram.com/${account}/`}
                     >

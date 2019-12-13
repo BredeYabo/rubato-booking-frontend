@@ -5,11 +5,15 @@ import cx from 'classnames';
 
 export default class ContactComponent extends React.Component {
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
             <div className={styles.contact_page}>
-                <img className={styles.contact_image}src={artistImage} alt="Kontakt bilde"/>
-                <div className="contact-form">
+                <img className={styles.contact_image} src={artistImage} alt="Kontakt bilde"/>
+                <div className={styles.contact_form}>
                     <form >
                         <div className={styles.contact_header}>
                             Kontakt oss

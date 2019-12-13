@@ -1,8 +1,7 @@
 .employeePicture {
     border-radius: 100%;
-    border: 10px #f4f4f4 solid;
-    height: 200px;
-    width: 200px;
+    height: 12vw;
+    width: 12vw;
     background-position: top;
     object-fit: cover;
     transition: 0.5s ease;
@@ -10,6 +9,7 @@
 
 .employeeCard {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .employeeHeader {
@@ -29,4 +29,11 @@
 
 .employee > * {
     margin: 0;
+}
+
+@media only screen and (max-width: 780px) {
+    .employeePicture{
+        height: 60vw;
+        width: 60vw;
+    }
 }
