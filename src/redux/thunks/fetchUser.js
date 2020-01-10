@@ -8,9 +8,9 @@ export function fetchUser(id) {
     }
 }
 
-export function fetchAllUsers() {
+export function fetchAllUsersPaged(pageNumber, sort) {
     return async dispatch => {
-        let url = "http://localhost:8080/api/person/list-all";
+        let url = "http://localhost:8080/api/person/list-all?page=" + pageNumber + "&sort=" + sort;
         await get(dispatch, fetchUserPending, fetchUserError, fetchAllUsersSuccess, url);
     }
 }

@@ -29,7 +29,8 @@ export const fetchUserError = (error) => {
 export const fetchAllUsersSuccess = (users) => {
     return {
         type: FETCH_ALL_USERS_SUCCESS,
-        users: users
+        users: users[0],
+        numUsers: users[1]
     }
 };
 

@@ -20,7 +20,11 @@ const initialState = {
         coverImage: "https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/11/UniversalCoverings_2880x1220.gif",
         profileImage: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
     },
-    allUsers: [],
+    pagedUsers: {
+        users: [],
+        numberOfUsers: 0,
+        currentPage: 0
+    },
     error: null
 };
 
@@ -68,18 +72,21 @@ export function userReducer (state = initialState, action) {
             };
 
         case FETCH_ALL_USERS_SUCCESS:
+            console.log(action);
             return {
                 ...state,
-                allUsers: action.users,
+                pagedUsers: {
+                    users: state.pagedUsers.users.concat(action.users),
+                    numberOfUsers: action.numUsers,
+                    currentPage: state.pagedUsers.currentPage + 1
+                }
             };
-
-
         default:
             return state;
     }
 }
 
 export const getUser = state => state.user.selectedUser;
-export const getAllUsers = state => state.user.allUsers;
+export const getAllUsers = state => state.user.pagedUsers;
 export const getUserPending = state => state.user.pending;
 export const getUserError = state => state.user.error;

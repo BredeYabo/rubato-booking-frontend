@@ -4,25 +4,32 @@ import ArtistPreviewComponent from "../ArtistPreviewComponent";
 import {getAllUsers, getUserPending} from "../../redux/reducers/userReducer";
 import {bindActionCreators} from "redux";
 import {connect} from 'react-redux'
-import {fetchAllUsers} from "../../redux/thunks/fetchUser";
+import {fetchAllUsersPaged} from "../../redux/thunks/fetchUser";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from 'react-loader-spinner'
 
 
 class ContentComponent extends Component{
 
     componentDidMount() {
-        this.props.doWhileLoading(this.props.fetchAllUsers)
+        console.log(this.props.pagedUsers);
+        this.props.doWhileLoading(() => this.props.fetchAllUsers(this.props.pagedUsers.currentPage, "idPerson,asc"));
+        this.rootScroll = React.createRef();
     }
 
     render() {
         return(
             <div className={styles.contentContainer} >
-                <InfiniteScroll next={this.props.fetchAllUsers}
-                                hasMore={false}
-                                loader={<h4>Loading...</h4>}
-                                dataLength={this.props.users.length}
+                <InfiniteScroll next={() => this.props.fetchAllUsers(this.props.pagedUsers.currentPage, "idPerson,asc")}
+                                hasMore={this.props.pagedUsers.users.length < this.props.pagedUsers.numberOfUsers}
+                                loader={<Loader className={styles.loader}
+                                                type="ThreeDots"
+                                                color="#00BFFF"
+                                                height={80}
+                                                width={80} />}
+                                dataLength={this.props.pagedUsers.numberOfUsers}
                                 className={styles.artistGrid}>
-                    {this.props.users.map((user) => {
+                    {this.props.pagedUsers.users.map((user) => {
                         return <ArtistPreviewComponent key={user.personId} artist={user}/>
                     })}
                 </InfiniteScroll>
@@ -32,12 +39,12 @@ class ContentComponent extends Component{
 }
 
 const mapStateToProps = state => ({
-    users: getAllUsers(state),
+    pagedUsers: getAllUsers(state),
     pending: getUserPending(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    fetchAllUsers: fetchAllUsers,
+    fetchAllUsers: fetchAllUsersPaged,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentComponent)
