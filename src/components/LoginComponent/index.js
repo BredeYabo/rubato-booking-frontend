@@ -11,7 +11,7 @@ class LoginComponent extends React.Component {
             password:'',
             ny_email: '',
             ny_passord: '',
-            user_type: ''
+            user_type: 'artist'
         }
     }
 
