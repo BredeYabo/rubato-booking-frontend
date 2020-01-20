@@ -12,9 +12,7 @@ import Loader from 'react-loader-spinner'
 class ContentComponent extends Component{
 
     componentDidMount() {
-        console.log(this.props.pagedUsers);
         this.props.doWhileLoading(() => this.props.fetchAllUsers(this.props.pagedUsers.currentPage, "idPerson,asc"));
-        this.rootScroll = React.createRef();
     }
 
     render() {
